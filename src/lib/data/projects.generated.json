@@ -1,0 +1,109 @@
+[
+  {
+    "id": 1038890058,
+    "name": "framework-control",
+    "url": "https://github.com/ozturkkl/framework-control",
+    "homepage": null,
+    "description": "An app with a GUI that allows users to control the Framework Laptop embedded features via the \"framework-system\" and the \"inputmodule-rs\". Other EC (Embedded Controller) features may be added at a later time.",
+    "language": "Svelte",
+    "topics": [
+      "framework-computer",
+      "framework-desktop",
+      "framework-laptop",
+      "framework13",
+      "framework16",
+      "rust",
+      "svelte"
+    ],
+    "stars": 221,
+    "forks": 7,
+    "pushedAt": "2026-08-25T06:05:24Z",
+    "image": "https://github.com/user-attachments/assets/69c5afe0-f316-4c62-933b-98d07fea8ee0"
+  },
+  {
+    "id": 910287616,
+    "name": "RadioWebApp",
+    "url": "https://github.com/ozturkkl/RadioWebApp",
+    "homepage": null,
+    "description": "A web app that displays radios, and podcasts using podcast RSS feeds.",
+    "language": "TypeScript",
+    "topics": [],
+    "stars": 2,
+    "forks": 1,
+    "pushedAt": "2026-08-22T02:34:43Z",
+    "image": null
+  },
+  {
+    "id": 640329888,
+    "name": "RGBPiano",
+    "url": "https://github.com/ozturkkl/RGBPiano",
+    "homepage": null,
+    "description": "Piano RGB LED controller. Will light up LED strip when keys are pressed.",
+    "language": "TypeScript",
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "pushedAt": "2026-07-19T23:40:36Z",
+    "image": "https://github.com/ozturkkl/RGBPiano/assets/51798197/996cd7ff-adf1-42fd-bbfb-e13fc2055af6"
+  },
+  {
+    "id": 1265669895,
+    "name": "portfolioSitePhotography",
+    "url": "https://github.com/ozturkkl/portfolioSitePhotography",
+    "homepage": "https://ilaydaturkmen.com/",
+    "description": null,
+    "language": "Svelte",
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "pushedAt": "2026-09-01T11:20:19Z",
+    "image": "https://github.com/user-attachments/assets/316ed5f2-99b7-4bcc-be72-4c679b60b8fc"
+  },
+  {
+    "id": 197676118,
+    "name": "portfolioSite",
+    "url": "https://github.com/ozturkkl/portfolioSite",
+    "homepage": "http://kozturk.com/",
+    "description": "Personal portfolio site for Kemal Ozturk made by Kemal Ozturk. It consists projects, links and resume.",
+    "language": "CSS",
+    "topics": [
+      "personal-website",
+      "portfolio",
+      "site"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "pushedAt": "2026-06-02T20:29:04Z",
+    "image": "https://user-images.githubusercontent.com/51798197/132264772-2a1af4ec-0cf7-4091-8ac2-c9f52f615220.png"
+  },
+  {
+    "id": 891812162,
+    "name": "folder-podcast-rss-generator",
+    "url": "https://github.com/ozturkkl/folder-podcast-rss-generator",
+    "homepage": null,
+    "description": "Generates podcast RSS feed for a given shared folder.",
+    "language": "TypeScript",
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "pushedAt": "2025-02-05T23:39:57Z",
+    "image": null
+  },
+  {
+    "id": 402460913,
+    "name": "NowPlaying.js",
+    "url": "https://github.com/ozturkkl/NowPlaying.js",
+    "homepage": "https://ozturkkl.github.io/NowPlaying.js/",
+    "description": "A small widget that displays the track that is currently playing for your radio. It is responsive, adjustable and will slide the text if it's too long for the container.",
+    "language": "HTML",
+    "topics": [
+      "javascript",
+      "radio",
+      "widget"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "pushedAt": "2021-09-06T23:06:28Z",
+    "image": "https://user-images.githubusercontent.com/51798197/131869081-653f4eb8-e438-49b4-9b61-0abfa5e1ab36.png"
+  }
+]
