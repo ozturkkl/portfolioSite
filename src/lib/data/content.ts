@@ -1,14 +1,33 @@
 export const profile = {
   name: 'Kemal Ozturk',
   role: 'Software Engineer',
-  headline: 'Product, Platform & Technical Leadership',
   location: 'Wheeling, Illinois',
   email: '97kemalozturk@gmail.com',
   title: 'I engineer the path from an idea to a system people can trust.',
-  summary: 'The purpose of software engineering is to control complexity, not to create it.',
-  summaryAttribution: 'Pamela Zave',
   status: 'On-call for recording reliability'
 };
+
+export const resumeUrl = '/Kemal-Ozturk-Resume-2026.pdf';
+
+export const heroQuotes = [
+  {
+    text: 'The purpose of software engineering is to control complexity, not to create it.',
+    attribution: 'Pamela Zave'
+  },
+
+  {
+    text: 'Complexity is the enemy of reliability.',
+    attribution: 'John Allspaw'
+  },
+  {
+    text: 'The only way to go fast is to go well.',
+    attribution: 'Robert C. Martin'
+  },
+  {
+    text: 'The best way to predict the future is to invent it.',
+    attribution: 'Alan Kay'
+  }
+];
 
 export const heroFacts = [
   { label: 'Current role', value: `${profile.role} · Descript` },
@@ -20,32 +39,31 @@ export const heroFacts = [
 
 export const copy = {
   experience: {
-    kicker: '01 / Experience',
+    kicker: 'Experience / 002',
     title: 'End-to-end ownership, from first RFC to production.',
     intro:
       'Seven years taking ambiguous requirements from architecture through staged rollout and production operations. Recording products at Descript and SquadCast; records software for police departments before that.'
   },
   projects: {
-    kicker: '02 / Projects',
+    kicker: 'Projects / 003',
     title: 'Useful systems, built in the open.',
     intro:
       'Framework Control, a volunteer radio PWA, and smaller tools. Repository details refresh from GitHub.'
   },
   toolkit: {
-    kicker: '03 / Toolkit',
+    kicker: 'Toolkit / 004',
     title: 'TypeScript for product work. Rust when the metal matters.',
     intro:
       'Nix when I want the machine to be reproducible. Cursor and Claude Code when I want the loop to stay short.'
   },
   links: {
-    kicker: '04 / Links',
-    title: 'Work, piano, and a few other tabs.',
-    intro: 'The old link tree, minus the noise.'
+    kicker: 'Links / 005'
   },
   contact: {
-    kicker: '05 / Contact',
+    kicker: 'Contact / 006',
     title: 'Have a recording stack, or a product worth simplifying?',
-    intro: 'Email is the most reliable way to reach me. The resume is here if you want the longer version.'
+    intro:
+      'Send a note from here and it lands in my inbox. LinkedIn and the resume are here if that is easier.'
   }
 };
 
@@ -56,7 +74,7 @@ export type ContentImage = {
 };
 
 export type PhotoWallItem = ContentImage & {
-  href: string;
+  href?: string;
 };
 
 const workImages = {
@@ -161,6 +179,24 @@ export const skillGroups = [
   {
     label: 'Systems',
     skills: ['Rust', 'Tokio', 'Poem', 'Python', 'C/C++', 'Nix/NixOS']
+  }
+];
+
+export const linksQuote = {
+  text: "The greatest thing you'll ever learn is just to love and be loved in return.",
+  attribution: 'Nat King Cole'
+};
+
+export const artworks: ContentImage[] = [
+  {
+    src: '/art/mustang.jpg',
+    alt: 'Artwork of a mustang',
+    caption: 'Mustang'
+  },
+  {
+    src: '/art/latrodectus.jpg',
+    alt: 'Artwork of a Latrodectus spider',
+    caption: 'Latrodectus'
   }
 ];
 
