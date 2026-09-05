@@ -42,9 +42,8 @@ experience entry's `images` array; its gallery appears automatically.
 npm run projects
 ```
 
-The build script fetches every public repository, excludes archived repositories,
-forks, and the separate `portfolioSiteWife` project, then reads the first useful
-non-badge image from each README. Missing descriptions and images use honest
+The build script fetches every public repository, excludes archived repositories
+and forks, then reads the first useful non-badge image from each README. Missing descriptions and images use honest
 visual fallbacks in the UI. If GitHub is temporarily unavailable, an existing
 non-empty snapshot is retained.
 

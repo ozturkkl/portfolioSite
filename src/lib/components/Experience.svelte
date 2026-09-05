@@ -5,7 +5,7 @@
 	import SectionHeader from './SectionHeader.svelte';
 </script>
 
-<section id="experience" class="section experience-section" aria-labelledby="experience-title">
+<section id="experience" class="section" aria-labelledby="experience-title">
 	<SectionHeader
 		kicker={copy.experience.kicker}
 		title={copy.experience.title}
@@ -13,7 +13,7 @@
 		intro={copy.experience.intro}
 	/>
 
-	<div class="experience-list">
+	<div class="divided-list">
 		{#each experience as role (role.company)}
 			<Entry
 				id={`experience-${createAnchorSlug(role.company)}`}
@@ -31,9 +31,3 @@
 		{/each}
 	</div>
 </section>
-
-<style>
-  .experience-list {
-    border-top: 1px solid var(--line);
-  }
-</style>

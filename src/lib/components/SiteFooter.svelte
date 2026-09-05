@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { profile } from '../data/content';
+	import { copy, profile } from '../data/content';
 
 	const currentYear = new Date().getFullYear();
 </script>
 
 <footer class="site-footer">
 	<p>© {currentYear} {profile.name} · {profile.location}</p>
-	<p>Designed and built by Kemal Ozturk.</p>
+	<p>{copy.footer.credit}</p>
 	<a class="text-link" href="#top" aria-label="Back to top">Back to top <span aria-hidden="true">↑</span></a>
 </footer>
 

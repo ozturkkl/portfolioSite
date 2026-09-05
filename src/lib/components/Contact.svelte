@@ -72,7 +72,7 @@
 		submitError = '';
 
 		if (!accessKeys.length) {
-			submitError = `The form is not configured yet. Email ${profile.email} directly.`;
+			submitError = copy.contact.errors.unconfigured;
 			return;
 		}
 
@@ -85,7 +85,7 @@
 				message,
 				botcheck: '',
 				subject: `Portfolio contact — ${name}`,
-				from_name: 'Kemal Ozturk Portfolio'
+				from_name: `${profile.name} Portfolio`
 			};
 
 			await Promise.all(
@@ -106,14 +106,14 @@
 			localStorage.removeItem(draftKey);
 			submitted = true;
 		} catch {
-			submitError = `Something went wrong sending that. Email ${profile.email} directly.`;
+			submitError = copy.contact.errors.sendFailed;
 		} finally {
 			submitting = false;
 		}
 	}
 </script>
 
-<section id="contact" class="section contact-section" aria-labelledby="contact-title">
+<section id="contact" class="section" aria-labelledby="contact-title">
 	<SectionHeader
 		kicker={copy.contact.kicker}
 		title={copy.contact.title}
@@ -123,15 +123,15 @@
 
 	<div class="contact-layout">
 		{#if submitted}
-			<article class="success-card" role="status" aria-live="polite">
-				<p class="inventory-code">Sent</p>
-				<h3>Thanks. I’ll write back.</h3>
-				<p>Your note is in my inbox. If it is time-sensitive, LinkedIn is the faster ping.</p>
+			<article class="success-card surface" role="status" aria-live="polite">
+				<p class="inventory-code">{copy.contact.success.kicker}</p>
+				<h3>{copy.contact.success.title}</h3>
+				<p>{copy.contact.success.body}</p>
 			</article>
 		{:else}
-			<form class="contact-form" onsubmit={handleSubmit} oninput={persistDraft}>
+			<form class="contact-form surface" onsubmit={handleSubmit} oninput={persistDraft}>
 				<input
-					class="honeypot"
+					class="visually-hidden"
 					type="checkbox"
 					name="botcheck"
 					tabindex="-1"
@@ -140,7 +140,7 @@
 				/>
 
 				<div class="field">
-					<label for="contact-name">Name</label>
+					<label class="inventory-code" for="contact-name">Name</label>
 					<input
 						id="contact-name"
 						name="name"
@@ -153,7 +153,7 @@
 				</div>
 
 				<div class="field">
-					<label for="contact-email">Email</label>
+					<label class="inventory-code" for="contact-email">Email</label>
 					<input
 						id="contact-email"
 						name="email"
@@ -167,8 +167,8 @@
 
 				<div class="field">
 					<div class="field-heading">
-						<label for="contact-message">Message</label>
-						<p aria-live="polite">{message.length}/{limits.message}</p>
+						<label class="inventory-code" for="contact-message">Message</label>
+						<p class="inventory-code" aria-live="polite">{message.length}/{limits.message}</p>
 					</div>
 					<textarea
 						id="contact-message"
@@ -177,7 +177,7 @@
 						required
 						maxlength={limits.message}
 						rows={6}
-						placeholder="What you are working on, and how I might help."
+						placeholder={copy.contact.placeholder}
 						onkeydown={(event) => {
 							if (event.key !== 'Enter' || !(event.ctrlKey || event.metaKey)) return;
 							event.preventDefault();
@@ -191,7 +191,7 @@
 				{/if}
 
 				<div class="form-actions">
-					<p class="form-hint">Ctrl/Cmd + Enter also sends.</p>
+					<p class="form-hint">{copy.contact.hint}</p>
 					<button class="button-link primary" type="submit" disabled={submitting}>
 						{submitting ? 'Sending…' : 'Send message'}
 					</button>
@@ -199,8 +199,8 @@
 			</form>
 		{/if}
 
-		<aside class="contact-aside">
-			<p class="inventory-code">Also / Direct</p>
+		<aside class="contact-aside surface">
+			<p class="inventory-code">{copy.contact.asideKicker}</p>
 			<div class="direct-email">
 				<a class="text-link" href={`mailto:${profile.email}`}>{profile.email}</a>
 				<button
@@ -246,23 +246,12 @@
   .success-card,
   .contact-aside {
     padding: clamp(1.25rem, 2.4vw, 1.85rem);
-    border: 1px solid var(--line);
-    background: var(--ink-soft);
   }
 
   .contact-form {
     position: relative;
     display: grid;
     gap: 1.15rem;
-  }
-
-  .honeypot {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
   }
 
   .field {
@@ -275,15 +264,6 @@
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
-  }
-
-  .field-heading p,
-  .field label {
-    color: var(--signal);
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
   }
 
   .field-heading p {
@@ -329,7 +309,6 @@
 
   .contact-form .button-link {
     margin-left: auto;
-    cursor: pointer;
   }
 
   .form-hint {

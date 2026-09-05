@@ -7,7 +7,6 @@ const featuredOrder = new Map([
   ['framework-control', 0],
   ['RadioWebApp', 1]
 ]);
-const excludedRepositories = new Set([]);
 
 const headers = {
   Accept: 'application/vnd.github+json',
@@ -108,10 +107,7 @@ async function getReadmeImage(repository) {
 
 async function buildSnapshot() {
   const repositories = (await getRepositories()).filter(
-    (repository) =>
-      !repository.archived &&
-      !repository.fork &&
-      !excludedRepositories.has(repository.name)
+    (repository) => !repository.archived && !repository.fork
   );
 
   const projects = await Promise.all(

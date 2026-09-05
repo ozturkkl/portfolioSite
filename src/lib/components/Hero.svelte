@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { MediaQuery } from 'svelte/reactivity';
-	import { heroQuotes, photoWallItems, profile } from '../data/content';
+	import { copy, heroQuotes, photoWallItems, profile } from '../data/content';
 	import projects from '../data/projects.generated.json';
 	import { formatRepositoryName } from '../format';
 	import { scrollToAnchor } from '../scroll';
-	import { ui } from '../ui.svelte';
+	import { appState } from '../appState.svelte';
 	import HeroStatus from './HeroStatus.svelte';
 	import PhotoWall from './PhotoWall.svelte';
 
@@ -48,7 +48,7 @@
 		}
 
 		event.preventDefault();
-		ui.showAllProjects = true;
+		appState.showAllProjects = true;
 		await tick();
 		scrollToAnchor(href);
 	}
@@ -71,7 +71,7 @@
 <section id="top" class="hero" aria-labelledby="hero-title">
 	<div class="hero-primary">
 		<p class="hero-kicker">
-			<span>SIGNAL / 001</span>
+			<span>{copy.hero.kicker}</span>
 			<span>{profile.location}</span>
 		</p>
 		<div class="hero-copy">
@@ -97,7 +97,7 @@
 	<div class="hero-wall">
 		<PhotoWall
 			layout="fill"
-			label="PROJECT WALL / SELECT A FRAME"
+			label={copy.hero.photoWallLabel}
 			items={photoWall}
 			onselect={revealProjectCard}
 		/>

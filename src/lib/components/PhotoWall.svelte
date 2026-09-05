@@ -1,7 +1,16 @@
+<script module lang="ts">
+	const failedImageUrls = $state<string[]>([]);
+
+	function recordFailedImage(url: string) {
+		if (!failedImageUrls.includes(url)) {
+			failedImageUrls.push(url);
+		}
+	}
+</script>
+
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import type { PhotoWallItem } from '../data/content';
-	import { recordFailedImage, ui } from '../ui.svelte';
 
 	let {
 		items,
@@ -18,7 +27,7 @@
 	} = $props();
 
 	const uid = $props.id();
-	let visible = $derived(items.filter((item) => !ui.failedImageUrls.includes(item.src)));
+	let visible = $derived(items.filter((item) => !failedImageUrls.includes(item.src)));
 
 	const minPhotoRatio = 3 / 4;
 	const maxPhotoRatio = 5 / 3;
@@ -45,7 +54,6 @@
 	<section
 		class="photo-wall"
 		data-layout={layout}
-		data-count={visible.length}
 		aria-labelledby={label ? `${uid}-title` : undefined}
 		aria-label={label ? undefined : ariaLabel}
 	>
@@ -96,12 +104,10 @@
   }
 
   .photo-wall[data-layout='fill'] {
-    min-width: 0;
     min-height: 0;
     height: 100%;
     overflow: hidden;
     container-type: size;
-    row-gap: var(--space-kicker);
     grid-template-rows: auto minmax(0, 1fr);
   }
 

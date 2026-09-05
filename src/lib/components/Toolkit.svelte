@@ -3,7 +3,7 @@
 	import SectionHeader from './SectionHeader.svelte';
 </script>
 
-<section id="toolkit" class="section toolkit-section" aria-labelledby="toolkit-title">
+<section id="toolkit" class="section" aria-labelledby="toolkit-title">
 	<SectionHeader
 		kicker={copy.toolkit.kicker}
 		title={copy.toolkit.title}
@@ -15,7 +15,7 @@
 		{#each skillGroups as group (group.label)}
 			<article class="inventory-card">
 				<header>
-					<p class="inventory-code">LAB / {group.label.slice(0, 3).toUpperCase()}</p>
+					<p class="inventory-code">{copy.toolkit.labPrefix} / {group.label.slice(0, 3).toUpperCase()}</p>
 					<h3>{group.label}</h3>
 				</header>
 				<ul>

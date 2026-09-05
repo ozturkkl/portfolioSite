@@ -131,14 +131,14 @@
 	>
 		{#each heroFacts as fact (fact.label)}
 			<div>
-				<dt>{fact.label}</dt>
+				<dt class="visually-hidden">{fact.label}</dt>
 				<dd>{fact.value}</dd>
 			</div>
 		{/each}
 		{#if marquee}
 			{#each heroFacts as fact (`dup-${fact.label}`)}
 				<div aria-hidden="true">
-					<dt>{fact.label}</dt>
+					<dt class="visually-hidden">{fact.label}</dt>
 					<dd>{fact.value}</dd>
 				</div>
 			{/each}
@@ -245,15 +245,6 @@
     text-align: center;
     content: "×";
     transform: translate(50%, -50%);
-  }
-
-  .hero-status dt {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
   }
 
   .hero-status dd {

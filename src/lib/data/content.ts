@@ -1,5 +1,6 @@
 export const profile = {
   name: 'Kemal Ozturk',
+  handle: 'Kemal_Ozt',
   role: 'Software Engineer',
   location: 'Wheeling, Illinois',
   email: '97kemalozturk@gmail.com',
@@ -38,6 +39,10 @@ export const heroFacts = [
 ];
 
 export const copy = {
+  hero: {
+    kicker: 'SIGNAL / 001',
+    photoWallLabel: 'PROJECT WALL / SELECT A FRAME'
+  },
   experience: {
     kicker: 'Experience / 002',
     title: 'End-to-end ownership, from first RFC to production.',
@@ -48,22 +53,44 @@ export const copy = {
     kicker: 'Projects / 003',
     title: 'Useful systems, built in the open.',
     intro:
-      'Framework Control, a volunteer radio PWA, and smaller tools. Repository details refresh from GitHub.'
+      'Framework Control, a volunteer radio PWA, and smaller tools. Repository details refresh from GitHub.',
+    defaultEyebrow: 'Recent repository',
+    fallbackDescription: 'Details are being documented.'
   },
   toolkit: {
     kicker: 'Toolkit / 004',
     title: 'TypeScript for product work. Rust when the metal matters.',
     intro:
-      'Nix when I want the machine to be reproducible. Cursor and Claude Code when I want the loop to stay short.'
+      'Nix when I want the machine to be reproducible. Cursor and Claude Code when I want the loop to stay short.',
+    labPrefix: 'LAB'
   },
   links: {
-    kicker: 'Links / 005'
+    kicker: 'Links / 005',
+    profileKicker: 'Profile / Personal',
+    studioLabel: 'Off the clock / Piano',
+    studioVideoUrl: 'https://www.youtube.com/embed/b2C7c3MK9wY',
+    studioVideoTitle: 'Kemal Ozturk performing a piano cover'
   },
   contact: {
     kicker: 'Contact / 006',
     title: 'Have a recording stack, or a product worth simplifying?',
     intro:
-      'Send a note from here and it lands in my inbox. LinkedIn and the resume are here if that is easier.'
+      'Send a note from here and it lands in my inbox. LinkedIn and the resume are here if that is easier.',
+    asideKicker: 'Also / Direct',
+    placeholder: 'What you are working on, and how I might help.',
+    hint: 'Ctrl/Cmd + Enter also sends.',
+    success: {
+      kicker: 'Sent',
+      title: 'Thanks. I’ll write back.',
+      body: 'Your note is in my inbox. If it is time-sensitive, LinkedIn is the faster ping.'
+    },
+    errors: {
+      unconfigured: `The form is not configured yet. Email ${profile.email} directly.`,
+      sendFailed: `Something went wrong sending that. Email ${profile.email} directly.`
+    }
+  },
+  footer: {
+    credit: `Designed and built by ${profile.name}.`
   }
 };
 
@@ -188,6 +215,11 @@ export const linksQuote = {
 };
 
 export const artworks: ContentImage[] = [
+  {
+    src: '/art/piano.jpg',
+    alt: 'Photograph of two miniature grand pianos sitting on a piano',
+    caption: 'Piano'
+  },
   {
     src: '/art/mustang.jpg',
     alt: 'Artwork of a mustang',

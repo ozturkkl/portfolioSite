@@ -2,14 +2,14 @@
 	import { copy, featuredProjects } from '../data/content';
 	import projects from '../data/projects.generated.json';
 	import { formatDate, formatRepositoryName } from '../format';
-	import { ui } from '../ui.svelte';
+	import { appState } from '../appState.svelte';
 	import Entry from './Entry.svelte';
 	import SectionHeader from './SectionHeader.svelte';
 
-	let visibleProjects = $derived(ui.showAllProjects ? projects : projects.slice(0, 4));
+	let visibleProjects = $derived(appState.showAllProjects ? projects : projects.slice(0, 4));
 </script>
 
-<section id="projects" class="section projects-section" aria-labelledby="projects-title">
+<section id="projects" class="section" aria-labelledby="projects-title">
 	<SectionHeader
 		kicker={copy.projects.kicker}
 		title={copy.projects.title}
@@ -17,16 +17,16 @@
 		intro={copy.projects.intro}
 	/>
 
-	<div id="project-grid" class="project-list">
+	<div id="project-grid" class="divided-list">
 		{#each visibleProjects as project (project.id)}
 			{const featured = featuredProjects[project.name]}
 			{const projectTitle = formatRepositoryName(project.name)}
 			{const liveUrl = featured?.liveUrl ?? project.homepage}
 			<Entry
 				id={`project-${project.name}`}
-				kicker={featured?.eyebrow ?? 'Recent repository'}
+				kicker={featured?.eyebrow ?? copy.projects.defaultEyebrow}
 				title={projectTitle}
-				description={featured?.impact ?? project.description ?? 'Details are being documented.'}
+				description={featured?.impact ?? project.description ?? copy.projects.fallbackDescription}
 				images={project.image === null
 					? []
 					: [
@@ -65,19 +65,15 @@
 			class="project-toggle"
 			type="button"
 			aria-controls="project-grid"
-			aria-expanded={ui.showAllProjects}
-			onclick={() => (ui.showAllProjects = !ui.showAllProjects)}
+			aria-expanded={appState.showAllProjects}
+			onclick={() => (appState.showAllProjects = !appState.showAllProjects)}
 		>
-			{ui.showAllProjects ? 'Show fewer projects' : `Show all ${projects.length} projects`}
+			{appState.showAllProjects ? 'Show fewer projects' : `Show all ${projects.length} projects`}
 		</button>
 	{/if}
 </section>
 
 <style>
-  .project-list {
-    border-top: 1px solid var(--line);
-  }
-
   .project-toggle {
     display: block;
     min-height: 50px;

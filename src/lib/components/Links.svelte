@@ -4,9 +4,9 @@
 	import SectionHeader from './SectionHeader.svelte';
 </script>
 
-<section id="links" class="section links-section" aria-labelledby="links-title">
+<section id="links" class="section" aria-labelledby="links-title">
 	<SectionHeader kicker={copy.links.kicker} titleId="links-title" />
-	<article class="profile-card">
+	<article class="profile-card surface">
 		<div class="profile-media">
 			<div class="portrait-frame">
 				<img
@@ -17,8 +17,8 @@
 				/>
 			</div>
 			<div class="identity-copy">
-				<p class="profile-handle">Profile / Personal</p>
-				<h3>Kemal_Ozt</h3>
+				<p class="profile-handle">{copy.links.profileKicker}</p>
+				<h3>{profile.handle}</h3>
 				<blockquote>
 					<p>“{linksQuote.text}”</p>
 					<cite>{linksQuote.attribution}</cite>
@@ -40,12 +40,12 @@
 	</article>
 
 	<div class="studio">
-		<div class="studio-panel">
-			<p class="video-label">Off the clock / Piano</p>
+		<div class="studio-panel surface">
+			<p class="video-label">{copy.links.studioLabel}</p>
 			<div class="video-frame">
 				<iframe
-					src="https://www.youtube.com/embed/b2C7c3MK9wY"
-					title="Kemal Ozturk performing a piano cover"
+					src={copy.links.studioVideoUrl}
+					title={copy.links.studioVideoTitle}
 					width="560"
 					height="315"
 					loading="lazy"
@@ -57,7 +57,7 @@
 		</div>
 
 		<div class="studio-art">
-			<PhotoWall items={artworks} ariaLabel="Drawings" />
+			<PhotoWall layout="grid" items={artworks} ariaLabel="Artwork" />
 		</div>
 	</div>
 </section>
@@ -66,8 +66,6 @@
   .profile-card {
     display: grid;
     overflow: hidden;
-    border: 1px solid var(--line);
-    background: var(--ink-soft);
     grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
   }
 
@@ -216,8 +214,6 @@
 
   .studio-panel {
     padding: 1rem 1rem 1.15rem;
-    border: 1px solid var(--line);
-    background: var(--ink-soft);
   }
 
   .video-label {
@@ -225,7 +221,6 @@
   }
 
   .video-frame {
-    position: relative;
     overflow: hidden;
     aspect-ratio: 16 / 9;
     background: #0b0b0a;

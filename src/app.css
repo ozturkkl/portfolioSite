@@ -161,6 +161,7 @@ ul {
   letter-spacing: 0.07em;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
   transition:
     color 180ms ease,
     background-color 180ms ease,
@@ -220,7 +221,6 @@ ul {
 }
 
 .text-link svg {
-  display: block;
   box-sizing: content-box;
   width: 1em;
   height: 1em;
@@ -267,8 +267,7 @@ ul {
   text-transform: uppercase;
 }
 
-.section-header h2,
-.contact-panel h2 {
+.section-header h2 {
   max-width: 16ch;
   font-family: var(--serif);
   font-size: clamp(2.75rem, 5vw, 5.3rem);
@@ -281,6 +280,24 @@ ul {
   color: var(--paper-muted);
   font-size: 1rem;
   line-height: 1.7;
+}
+
+.surface {
+  border: 1px solid var(--line);
+  background: var(--ink-soft);
+}
+
+.divided-list {
+  border-top: 1px solid var(--line);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 @media (max-width: 1050px) {

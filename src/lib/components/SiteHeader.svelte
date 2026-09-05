@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resumeUrl } from '../data/content';
+	import { profile, resumeUrl } from '../data/content';
 
 	let menuOpen = $state(false);
 
@@ -9,10 +9,10 @@
 </script>
 
 <header class="site-header">
-	<a class="wordmark" href="#top" onclick={closeMenu} aria-label="Kemal Ozturk, home">
+	<a class="wordmark" href="#top" onclick={closeMenu} aria-label="{profile.name}, home">
 		<img src="/favicon.svg?v=3" alt="" width="20" height="20" />
 		<span class="wordmark-prompt">
-			<span class="wordmark-name">Kemal Ozturk</span>
+			<span class="wordmark-name">{profile.name}</span>
 			<span class="wordmark-cursor" aria-hidden="true"></span>
 		</span>
 	</a>
