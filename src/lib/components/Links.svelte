@@ -18,7 +18,7 @@
 			</div>
 			<div class="identity-copy">
 				<p class="profile-handle">{copy.links.profileKicker}</p>
-				<h3>{profile.handle}</h3>
+				<h3>{profile.name}</h3>
 				<blockquote>
 					<p>“{linksQuote.text}”</p>
 					<cite>{linksQuote.attribution}</cite>

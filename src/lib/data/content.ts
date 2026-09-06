@@ -1,11 +1,9 @@
 export const profile = {
   name: 'Kemal Ozturk',
-  handle: 'Kemal_Ozt',
   role: 'Software Engineer',
   location: 'Wheeling, Illinois',
   email: '97kemalozturk@gmail.com',
-  title: 'I engineer the path from an idea to a system people can trust.',
-  status: 'On-call for recording reliability'
+  title: 'I engineer the path from an idea to a system people can trust.'
 };
 
 export const resumeUrl = '/Kemal-Ozturk-Resume-2026.pdf';
@@ -14,9 +12,9 @@ export const site = {
   url: 'https://kozturk.com',
   title: `${profile.name} | ${profile.role}`,
   description:
-    'Kemal Ozturk is a software engineer who owns products from RFC through production. TypeScript, platform systems, and AI-assisted development with Cursor, Claude Code, and Codex.',
+    'Kemal Ozturk is a fullstack software engineer who designs, ships, and operates systems end to end. TypeScript product work, APIs, security, reliability, and open source. Uses Cursor, Claude Code, Codex, Copilot, and Zed to move faster without lowering the quality bar.',
   shareDescription:
-    'End-to-end product ownership, platform work, and AI-assisted development. Explore Kemal\'s work, open-source projects, and links.',
+    'Fullstack engineer: system design, secure APIs, recording and reliability, open source, and AI-assisted delivery. Explore Kemal\'s work, projects, and links.',
   imagePath: '/images/other/kemal.jpg',
   themeColor: '#171815'
 };
@@ -27,51 +25,64 @@ export const heroQuotes = [
     attribution: 'Pamela Zave'
   },
   {
-    text: 'Complexity is the enemy of reliability.',
-    attribution: 'John Allspaw'
+    text: 'Security is a process, not a product.',
+    attribution: 'Bruce Schneier'
+  },
+  {
+    text: 'Make it work, make it right, make it fast.',
+    attribution: 'Kent Beck'
   },
   {
     text: 'The only way to go fast is to go well.',
     attribution: 'Robert C. Martin'
   },
   {
+    text: 'Complexity is the enemy of reliability.',
+    attribution: 'John Allspaw'
+  },
+  {
+    text: 'A distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable.',
+    attribution: 'Leslie Lamport'
+  },
+  {
     text: 'A complex system that works is invariably found to have evolved from a simple system that worked.',
     attribution: 'John Gall'
-  }
+  },
 ];
 
 export const heroFacts = [
-  { label: 'Current role', value: `${profile.role} · Descript` },
-  { label: 'Status', value: profile.status },
-  { label: 'Scope', value: '7 years · RFC through production' },
-  { label: 'Ownership', value: 'Technical DRI · Recording' },
-  { label: 'AI tools', value: 'Cursor · Claude Code · Codex' }
+  { label: 'Tenure', value: '7 years · fullstack' },
+  { label: 'Status', value: 'Open source maintainer' },
+  { label: 'Ownership', value: 'Design · ship · operate' },
+  { label: 'Surfaces', value: 'Browser · desktop · APIs' },
+  { label: 'Daily driver', value: 'Linux · NixOS' },
+  { label: 'AI tools', value: 'Cursor · Claude · Codex · Copilot · Zed' }
 ];
 
 export const copy = {
   hero: {
-    kicker: 'SIGNAL / 001',
+    kicker: 'Intro / 001',
     photoWallLabel: 'PROJECT WALL / SELECT A FRAME'
   },
   experience: {
     kicker: 'Experience / 002',
-    title: 'End-to-end ownership, from first RFC to production.',
+    title: 'Full-stack systems, from capture to production.',
     intro:
-      'Seven years as the engineer who writes the plan, sequences the rollout, and stays on the hook after launch. I use Cursor, Claude Code, Codex, and Copilot to move faster without handing the quality bar to the model. Descript and SquadCast for product and platform work; Peel9 before that, shipping records software used by police departments.'
+      'Seven years owning products across the stack: management software used by police departments, a web recording studio, then Descript’s video editor, recorder, and Rooms platform. I design the architecture, ship the client and the APIs, and operate what I launch: security, analytics, reliability, and rollout included.'
   },
   projects: {
     kicker: 'Projects / 003',
-    title: 'Systems I designed and still operate.',
+    title: 'The same craft, kept after hours and still upkept with care.',
     intro:
-      'Framework Control is a full-stack laptop control service I architected and still maintain. Cihan Radyo is a volunteer PWA in production. Repository details on this page refresh from GitHub.',
+      'Dedicated to my craft: getting the details right, keeping a quality bar I will not lower, and building things that genuinely help other people.',
     defaultEyebrow: 'Recent repository',
     fallbackDescription: 'Details are being documented.'
   },
   toolkit: {
     kicker: 'Toolkit / 004',
-    title: 'TypeScript in product. Agents in the loop.',
+    title: 'Using the latest and greatest to move faster without lowering the quality bar.',
     intro:
-      'Cursor, Claude Code, Codex, Copilot, and Zed are how I plan, implement, and review. I still write the RFC, own the rollout, and keep the quality bar. Rust and Nix when the machine has to be close to the metal and reproducible.',
+      'Tools follow the problem, not the other way around. TypeScript for product surfaces, platform services for rollout and reliability, and Rust or Nix when the work has to sit close to hardware. Agents speed drafting and review. The cards below mention some of them but are not strict limits.',
     labPrefix: 'LAB'
   },
   links: {
@@ -83,16 +94,16 @@ export const copy = {
   },
   contact: {
     kicker: 'Contact / 006',
-    title: 'Need an owner from RFC through launch?',
+    title: 'Building something that has to be dependable and stay up?',
     intro:
-      'If you need someone to take a product from design through rollout, send a note. It lands in my inbox. LinkedIn and the resume are here if that is easier.',
+      'If you need an engineer who can take a system across client, API, and production, send a note. It lands in my inbox. LinkedIn and the resume are here if that is easier.',
     asideKicker: 'Also / Direct',
-    placeholder: 'What you are shipping, and where you need an owner.',
+    placeholder: 'Want me to join your team? Tell me about what you are shipping, and where you need help.',
     hint: 'Ctrl/Cmd + Enter also sends.',
     success: {
       kicker: 'Sent',
-      title: 'Thanks. I’ll write back.',
-      body: 'Your note is in my inbox. If it is time-sensitive, LinkedIn is the faster ping.'
+      title: 'Thanks. I’ll get back to you.',
+      body: 'Your note is in my inbox. If it is time-sensitive, ping me on LinkedIn.'
     },
     errors: {
       unconfigured: `The form is not configured yet. Email ${profile.email} directly.`,
@@ -151,19 +162,32 @@ export const experience = [
   {
     company: 'Descript',
     role: 'Software Engineer',
-    dates: 'June 2023 - Present',
+    dates: 'June 2023 - September 2026',
     summary:
-      'Technical DRI at Descript. I own architecture, RFCs, and delivery across Rooms, the web capture platform, and the APIs around them — from the first design through flagged rollout and production operations, including the work that made the SquadCast sunset possible.',
+      'Technical DRI for recording at Descript. I authored the Rooms architecture RFC and led the capture platform end to end: APIs, invite-scoped security, web and desktop clients, staged rollout, and production operations.',
     highlights: [
-      'Led architecture and delivery of Scheduled Rooms across Drive, Rooms, APIs, and the recording stack; took invites from RFC through 100% rollout, then shipped hostless recording to GA and link-based hosting behind a dedicated safety flag, reaching 500+ weekly creations, over 50% conversion, and about 25% of Rooms recordings.',
-      'Designed room-to-project mapping and invite-scoped authorization, including opaque invite links, server-checked host permission, project-scoped delegate credentials, failure modes, and migration plans, then coordinated phased rollouts to reduce risk during the SquadCast sunset.',
-      'Original author of the Web Recorder platform: TypeScript engine, Recorder class, and Redux-Saga orchestration for multi-track audio, 4K/30 FPS video, and screen capture across Editor, Media Library, Quick Recorder, and Rooms.',
-      'Built a segmented upload manager with Web Worker offloading, smart timeouts and retries, duplicate-upload protection, and recovery handoff, so in-progress recordings could play back as chunks uploaded.',
-      'Shipped script-state visualization, cross-surface cancel/restart, and pre-roll/live playback to GA; tightened A/V sync from about 700 ms to 50 ms while eliminating lifecycle races and lingering media references.',
-      'Owned high-severity recording reliability and on-call across web and desktop: data-loss recovery, device failures, authorization paths, memory telemetry, deploy guards, and Support diagnostics.',
+      'Led Scheduled Rooms from architecture RFC through 100% rollout across Drive, Rooms, APIs, and the recording stack; shipped hostless recording to GA and link-based hosting behind a dedicated safety flag, reaching 500+ weekly creations, over 50% conversion, and about 25% of Rooms recordings.',
+      'Designed invite-scoped authorization as delegated capability, not impersonation: opaque invite links, server-checked host permission, project-scoped credentials, and isolated sessions so a link-holder can record without project membership. Overhauled in-call app messaging with serialization, coalescing, and retries; coordinated mixed-version API and client rollouts, rate limits, and security review.',
+      'Architect and first engineer on the Web Recorder platform: a UI-independent React/TypeScript engine and Redux-Saga orchestration for multi-track camera, microphone, screen, and system audio at 4K/30 FPS, with hot-swappable devices during capture, reused across Editor, Media Library, Quick Recorder, and Rooms.',
+      'Delivered instant playback end to end: re-architected async segment queues to eliminate race conditions, then built a Web Worker upload manager with progressive chunk demuxing, progress-aware timeouts, duplicate protection, and recovery into Temporal workflows, so people could review a take while chunks were still uploading.',
+      'Shipped script-state visualization, cancel/restart, and pre-roll/live playback to GA; tightened A/V sync from about 700 ms to 50 ms. Built an internal WebAssembly denoise effect that preserves voice character without per-use server inference.',
+      'Owned recording reliability and incidents across web and desktop: data-loss recovery, MediaRecorder container and device failures, authorization paths, memory telemetry, deploy guards that keep local config out of production bundles, and Support diagnostics.',
       'Raised delivery velocity with reusable AI-assisted review workflows, coding guidelines, and agent instructions that other engineers and agents picked up beyond personal use.'
     ],
-    tools: ['TypeScript', 'Redux-Saga', 'WebRTC', 'Temporal', 'LaunchDarkly', 'Cursor'],
+    tools: [
+      'TypeScript',
+      'React',
+      'Redux-Saga',
+      'WebRTC',
+      'Daily',
+      'MediaRecorder',
+      'Web Workers',
+      'WebAssembly',
+      'Electron',
+      'Temporal',
+      'Sentry',
+      'LaunchDarkly'
+    ],
     images: [workImages.descriptRooms, workImages.descriptApp, workImages.descriptEditor]
   },
   {
@@ -171,13 +195,14 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'January 2022 - August 2023',
     summary:
-      'Owned a full browser recording product through acquisition: capture, session UX, account lifecycle, and the generators that kept the team moving. That product became Descript Rooms.',
+      'Owned a remote browser recording product end to end through acquisition: capture engine, auth, onboarding, integrations, account lifecycle, and the Nx tooling that kept the team shipping.',
     highlights: [
-      'Built and owned the product across Angular, TypeScript, Next.js, Firebase, and GCP, spanning the recording engine, notifications, account lifecycle, integrations, onboarding, scheduling, and authentication.',
-      'Led Canvas and SquadShots releases, and shipped dark mode, mobile-first layouts, accessibility work, and reusable UI across Studio.',
-      'Wrote Nx executors and generators that cut feature scaffolding from 30 minutes to 5, then profiled and fixed CPU usage and memory leaks in Studio, Chat, Dashboard, and audio metering.'
+      'Built and owned core product surfaces across Angular, TypeScript, Next.js, Firebase, and GCP: recording engine, notifications, auth, onboarding, third-party integrations, org and user lifecycle, and scheduling.',
+      'Led Canvas and SquadShots releases; shipped dark mode, mobile-first layouts, accessible custom components, and reusable UI across Studio.',
+      'Authored Nx executors and generators that cut feature scaffolding from 30 minutes to 5, and cleaned up services to reduce technical debt across the app.',
+      'Profiled CPU and memory across Studio, Chat, Dashboard, and recording UI; fixed leaks including one in the VU meter visualization that was steadily degrading session performance.'
     ],
-    tools: ['Angular', 'TypeScript', 'Next.js', 'Firebase', 'Nx'],
+    tools: ['Angular', 'RxJS', 'Tailwind', 'TypeScript', 'Next.js', 'Firebase', 'GCP', 'Nx', 'GitHub CI', 'Google Cloud Functions'],
     images: [workImages.squadCastApp, workImages.squadCastStudio]
   },
   {
@@ -187,8 +212,8 @@ export const experience = [
     summary:
       'On a small team, I designed and shipped records-management features used by 10+ police departments, and ran reviews, mentoring, and the GitHub repo.',
     highlights: [
-      'Shipped approval workflows, crash diagrams, modular forms, analytics, and account recovery in Node.js, Express, and Handlebars.',
-      'Led code reviews, maintained the GitHub repository, mentored junior engineers, and wrote a Leaflet plugin for dynamic crash-map markers.'
+      'Delivered Node.js, Express, and Handlebars features for records management and analytics: approval workflows, crash diagrams, modular forms, and account recovery. Software that had to be correct when the records mattered.',
+      'Led code reviews, maintained the GitHub repository, mentored junior engineers, and built a Leaflet plugin for dynamic crash-map markers.'
     ],
     tools: ['Node.js', 'Express', 'Handlebars', 'Leaflet'],
     images: [workImages.peel9Platform]
@@ -208,19 +233,40 @@ export const skillGroups = [
   },
   {
     label: 'Product',
-    skills: ['TypeScript', 'JavaScript', 'React', 'Svelte', 'Node.js', 'Redux-Saga']
+    skills: [
+      'TypeScript',
+      'JavaScript',
+      'React',
+      'Svelte',
+      'Angular',
+      'Next.js',
+      'Node.js',
+      'Redux-Saga',
+      'Vite',
+      'Nx',
+      'Turborepo'
+    ]
   },
   {
     label: 'Media',
-    skills: ['WebRTC', 'MediaRecorder', 'WebCodecs', 'WebAssembly', 'Web Workers', 'Electron']
+    skills: ['WebRTC', 'Daily', 'MediaRecorder', 'WebCodecs', 'WebAssembly', 'Web Workers', 'Electron']
   },
   {
     label: 'Platform',
-    skills: ['Temporal', 'GCP', 'AWS', 'Firebase', 'Sentry', 'LaunchDarkly', 'GitHub CI']
+    skills: [
+      'Temporal',
+      'GCP',
+      'AWS',
+      'Firebase',
+      'Sentry',
+      'LaunchDarkly',
+      'Cloudflare',
+      'Retool'
+    ]
   },
   {
     label: 'Systems',
-    skills: ['Rust', 'Tokio', 'Poem', 'Python', 'C/C++', 'Nix/NixOS']
+    skills: ['Rust', 'Tokio', 'Poem', 'OpenAPI', 'Python', 'C/C++', 'Nix/NixOS', 'GitHub CI']
   }
 ];
 

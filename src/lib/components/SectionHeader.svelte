@@ -13,13 +13,15 @@
 </script>
 
 <header class={{ 'section-header': true, 'kicker-only': !title }}>
-	<div class="section-heading">
-		<p class="section-number" id={!title && titleId ? titleId : undefined}>{kicker}</p>
-		{#if title}
-			<h2 id={titleId}>{title}</h2>
-		{/if}
-	</div>
-	{#if intro}
-		<p>{intro}</p>
+	<p class="section-number" id={!title && titleId ? titleId : undefined}>{kicker}</p>
+	{#if title || intro}
+		<div class="section-copy">
+			{#if title}
+				<h2 id={titleId}>{title}</h2>
+			{/if}
+			{#if intro}
+				<p>{intro}</p>
+			{/if}
+		</div>
 	{/if}
 </header>

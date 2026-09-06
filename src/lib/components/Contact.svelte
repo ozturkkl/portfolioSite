@@ -84,7 +84,7 @@
 				email,
 				message,
 				botcheck: '',
-				subject: `Portfolio contact — ${name}`,
+				subject: `Portfolio contact from ${name}`,
 				from_name: `${profile.name} Portfolio`
 			};
 

@@ -79,8 +79,8 @@
 
   .entry.has-media {
     align-items: start;
-    column-gap: clamp(1.5rem, 3.5vw, 3rem);
-    grid-template-columns: minmax(0, 1fr) minmax(16rem, 23rem);
+    column-gap: clamp(1.25rem, 2.5vw, 2rem);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 19rem);
     grid-template-areas:
       "header wall"
       "summary wall"
@@ -118,11 +118,6 @@
     justify-content: space-between;
     gap: 0.55rem 1.15rem;
     width: 100%;
-  }
-
-  .has-media .entry-heading,
-  .has-media .entry-summary {
-    max-width: 46rem;
   }
 
   .entry-kicker {

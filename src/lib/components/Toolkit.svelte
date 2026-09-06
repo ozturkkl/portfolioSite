@@ -37,9 +37,10 @@
   }
 
   .inventory-card {
-    flex: 0 0 min(16.5rem, 100%);
-    width: min(16.5rem, 100%);
-    padding: clamp(1.4rem, 2.4vw, 2rem);
+    flex: 0 0 13.25rem;
+    width: 13.25rem;
+    max-width: 100%;
+    padding: clamp(1.25rem, 2vw, 1.65rem);
     color: var(--ink);
     background:
       linear-gradient(rgb(23 24 21 / 8%) 1px, transparent 1px),
@@ -67,17 +68,17 @@
   .inventory-card h3 {
     margin-top: var(--space-kicker);
     font-family: var(--serif);
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 400;
     letter-spacing: -0.035em;
   }
 
   .inventory-card ul {
     display: grid;
-    gap: 0.7rem;
-    padding-top: 1.5rem;
+    gap: 0.55rem;
+    padding-top: 1.25rem;
     font-family: var(--mono);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
   }
 
   .inventory-card li {
