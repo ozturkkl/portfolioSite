@@ -10,12 +10,22 @@ export const profile = {
 
 export const resumeUrl = '/Kemal-Ozturk-Resume-2026.pdf';
 
+export const site = {
+  url: 'https://kozturk.com',
+  title: `${profile.name} | ${profile.role}`,
+  description:
+    'Kemal Ozturk is a software engineer who owns products from RFC through production. TypeScript, platform systems, and AI-assisted development with Cursor, Claude Code, and Codex.',
+  shareDescription:
+    'End-to-end product ownership, platform work, and AI-assisted development. Explore Kemal\'s work, open-source projects, and links.',
+  imagePath: '/images/other/kemal.jpg',
+  themeColor: '#171815'
+};
+
 export const heroQuotes = [
   {
     text: 'The purpose of software engineering is to control complexity, not to create it.',
     attribution: 'Pamela Zave'
   },
-
   {
     text: 'Complexity is the enemy of reliability.',
     attribution: 'John Allspaw'
@@ -25,8 +35,8 @@ export const heroQuotes = [
     attribution: 'Robert C. Martin'
   },
   {
-    text: 'The best way to predict the future is to invent it.',
-    attribution: 'Alan Kay'
+    text: 'A complex system that works is invariably found to have evolved from a simple system that worked.',
+    attribution: 'John Gall'
   }
 ];
 
@@ -47,21 +57,21 @@ export const copy = {
     kicker: 'Experience / 002',
     title: 'End-to-end ownership, from first RFC to production.',
     intro:
-      'Seven years taking ambiguous requirements from architecture through staged rollout and production operations. Recording products at Descript and SquadCast; records software for police departments before that.'
+      'Seven years as the engineer who writes the plan, sequences the rollout, and stays on the hook after launch. I use Cursor, Claude Code, Codex, and Copilot to move faster without handing the quality bar to the model. Descript and SquadCast for product and platform work; Peel9 before that, shipping records software used by police departments.'
   },
   projects: {
     kicker: 'Projects / 003',
-    title: 'Useful systems, built in the open.',
+    title: 'Systems I designed and still operate.',
     intro:
-      'Framework Control, a volunteer radio PWA, and smaller tools. Repository details refresh from GitHub.',
+      'Framework Control is a full-stack laptop control service I architected and still maintain. Cihan Radyo is a volunteer PWA in production. Repository details on this page refresh from GitHub.',
     defaultEyebrow: 'Recent repository',
     fallbackDescription: 'Details are being documented.'
   },
   toolkit: {
     kicker: 'Toolkit / 004',
-    title: 'TypeScript for product work. Rust when the metal matters.',
+    title: 'TypeScript in product. Agents in the loop.',
     intro:
-      'Nix when I want the machine to be reproducible. Cursor and Claude Code when I want the loop to stay short.',
+      'Cursor, Claude Code, Codex, Copilot, and Zed are how I plan, implement, and review. I still write the RFC, own the rollout, and keep the quality bar. Rust and Nix when the machine has to be close to the metal and reproducible.',
     labPrefix: 'LAB'
   },
   links: {
@@ -73,11 +83,11 @@ export const copy = {
   },
   contact: {
     kicker: 'Contact / 006',
-    title: 'Have a recording stack, or a product worth simplifying?',
+    title: 'Need an owner from RFC through launch?',
     intro:
-      'Send a note from here and it lands in my inbox. LinkedIn and the resume are here if that is easier.',
+      'If you need someone to take a product from design through rollout, send a note. It lands in my inbox. LinkedIn and the resume are here if that is easier.',
     asideKicker: 'Also / Direct',
-    placeholder: 'What you are working on, and how I might help.',
+    placeholder: 'What you are shipping, and where you need an owner.',
     hint: 'Ctrl/Cmd + Enter also sends.',
     success: {
       kicker: 'Sent',
@@ -143,16 +153,17 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'June 2023 - Present',
     summary:
-      'Technical DRI for recording products at Descript: Rooms, the web capture engine, and the reliability work that followed the SquadCast sunset. I take that work from RFC through guarded releases and production operations.',
+      'Technical DRI at Descript. I own architecture, RFCs, and delivery across Rooms, the web capture platform, and the APIs around them — from the first design through flagged rollout and production operations, including the work that made the SquadCast sunset possible.',
     highlights: [
-      'Led architecture and delivery of Scheduled Rooms and hostless recording across Drive, Rooms, APIs, and the recording stack; took invite management and scheduling from RFC through 100% rollout, reaching 500+ weekly creations, over 50% conversion, and about 25% of Rooms recordings.',
-      'Designed room-to-project mapping and invite-scoped authorization, including delegate tokens, project permissions, failure modes, and migration plans, then coordinated phased rollouts to reduce risk during the SquadCast sunset.',
+      'Led architecture and delivery of Scheduled Rooms across Drive, Rooms, APIs, and the recording stack; took invites from RFC through 100% rollout, then shipped hostless recording to GA and link-based hosting behind a dedicated safety flag, reaching 500+ weekly creations, over 50% conversion, and about 25% of Rooms recordings.',
+      'Designed room-to-project mapping and invite-scoped authorization, including opaque invite links, server-checked host permission, project-scoped delegate credentials, failure modes, and migration plans, then coordinated phased rollouts to reduce risk during the SquadCast sunset.',
       'Original author of the Web Recorder platform: TypeScript engine, Recorder class, and Redux-Saga orchestration for multi-track audio, 4K/30 FPS video, and screen capture across Editor, Media Library, Quick Recorder, and Rooms.',
       'Built a segmented upload manager with Web Worker offloading, smart timeouts and retries, duplicate-upload protection, and recovery handoff, so in-progress recordings could play back as chunks uploaded.',
       'Shipped script-state visualization, cross-surface cancel/restart, and pre-roll/live playback to GA; tightened A/V sync from about 700 ms to 50 ms while eliminating lifecycle races and lingering media references.',
-      'Owned high-severity recording reliability and on-call across web and desktop: data-loss recovery, device failures, authorization paths, memory telemetry, deploy guards, and Support diagnostics.'
+      'Owned high-severity recording reliability and on-call across web and desktop: data-loss recovery, device failures, authorization paths, memory telemetry, deploy guards, and Support diagnostics.',
+      'Raised delivery velocity with reusable AI-assisted review workflows, coding guidelines, and agent instructions that other engineers and agents picked up beyond personal use.'
     ],
-    tools: ['TypeScript', 'Redux-Saga', 'WebRTC', 'Web Workers', 'Temporal'],
+    tools: ['TypeScript', 'Redux-Saga', 'WebRTC', 'Temporal', 'LaunchDarkly', 'Cursor'],
     images: [workImages.descriptRooms, workImages.descriptApp, workImages.descriptEditor]
   },
   {
@@ -160,13 +171,13 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'January 2022 - August 2023',
     summary:
-      'Built the browser-based remote recording product that later became Descript Rooms, from capture engine through the surfaces around a live session, including through the acquisition.',
+      'Owned a full browser recording product through acquisition: capture, session UX, account lifecycle, and the generators that kept the team moving. That product became Descript Rooms.',
     highlights: [
-      'Contributed across the recording engine, notifications, account lifecycle, integrations, onboarding, scheduling, and authentication using Angular, TypeScript, Next.js, Firebase, and GCP.',
+      'Built and owned the product across Angular, TypeScript, Next.js, Firebase, and GCP, spanning the recording engine, notifications, account lifecycle, integrations, onboarding, scheduling, and authentication.',
       'Led Canvas and SquadShots releases, and shipped dark mode, mobile-first layouts, accessibility work, and reusable UI across Studio.',
       'Wrote Nx executors and generators that cut feature scaffolding from 30 minutes to 5, then profiled and fixed CPU usage and memory leaks in Studio, Chat, Dashboard, and audio metering.'
     ],
-    tools: ['Angular', 'TypeScript', 'Next.js', 'Firebase', 'GCP'],
+    tools: ['Angular', 'TypeScript', 'Next.js', 'Firebase', 'Nx'],
     images: [workImages.squadCastApp, workImages.squadCastStudio]
   },
   {
@@ -174,7 +185,7 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'August 2019 - September 2021',
     summary:
-      'Delivered records management and analytics used by more than ten police departments, from feature design through review and mentoring on a small team.',
+      'On a small team, I designed and shipped records-management features used by 10+ police departments, and ran reviews, mentoring, and the GitHub repo.',
     highlights: [
       'Shipped approval workflows, crash diagrams, modular forms, analytics, and account recovery in Node.js, Express, and Handlebars.',
       'Led code reviews, maintained the GitHub repository, mentored junior engineers, and wrote a Leaflet plugin for dynamic crash-map markers.'
@@ -192,16 +203,20 @@ export const photoWallItems: PhotoWallItem[] = [
 
 export const skillGroups = [
   {
+    label: 'AI',
+    skills: ['Cursor', 'Claude Code', 'OpenAI Codex', 'Microsoft Copilot', 'Zed']
+  },
+  {
     label: 'Product',
     skills: ['TypeScript', 'JavaScript', 'React', 'Svelte', 'Node.js', 'Redux-Saga']
   },
   {
     label: 'Media',
-    skills: ['WebRTC', 'MediaRecorder', 'WebCodecs', 'Web Workers', 'Electron']
+    skills: ['WebRTC', 'MediaRecorder', 'WebCodecs', 'WebAssembly', 'Web Workers', 'Electron']
   },
   {
     label: 'Platform',
-    skills: ['Temporal', 'GCP', 'AWS', 'Firebase', 'Sentry', 'GitHub CI', 'Cursor', 'Claude Code']
+    skills: ['Temporal', 'GCP', 'AWS', 'Firebase', 'Sentry', 'LaunchDarkly', 'GitHub CI']
   },
   {
     label: 'Systems',
@@ -236,13 +251,13 @@ export const links = [
   {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/ozturkkl/',
-    description: 'Work history and a direct way to connect.',
+    description: 'Roles, dates, and a direct way to reach me.',
     icon: '/images/links/LinkedIn.webp'
   },
   {
     title: 'GitHub',
     url: 'https://github.com/ozturkkl',
-    description: 'Framework Control, experiments, and this site.',
+    description: 'Framework Control, this site, and the rest of the public work.',
     icon: '/images/links/GitHub.webp'
   },
   {
@@ -272,12 +287,12 @@ export const featuredProjects: Record<
   'framework-control': {
     eyebrow: 'Featured open source',
     impact:
-      'A Rust service and Svelte UI for Framework laptops: live telemetry, fan curves, battery charging, and AMD power controls. Windows MSI, Linux, AUR, nixpkgs, and NixOS packaging. Solo-maintained, 220+ stars.'
+      'I designed and still maintain the full stack: a Rust service (Tokio, Poem, OpenAPI) and a Svelte/Vite UI for live telemetry, fan curves, battery charging, and AMD power controls. Windows MSI, Linux systemd/udev, AUR, nixpkgs, and NixOS. Solo-maintained, 220+ stars.'
   },
   RadioWebApp: {
     eyebrow: 'Volunteer production system',
     impact:
-      'A Svelte radio and podcast PWA for Cihan Radyo. About 1.4K daily visitors, 334K requests, and 20 GB/day through Cloudflare, with 61% cached.',
+      'I built and still operate this Svelte/TypeScript PWA for Cihan Radyo. About 1.4K daily visitors, 334K requests, and 20 GB/day through Cloudflare, with 61% cached.',
     liveUrl: 'https://cihanradyo.com'
   }
 };
