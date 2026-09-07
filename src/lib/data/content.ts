@@ -75,7 +75,7 @@ export const copy = {
     title: 'The same craft, kept after hours and still upkept with care.',
     intro:
       'Dedicated to my craft: getting the details right, keeping a quality bar I will not lower, and building things that genuinely help other people.',
-    defaultEyebrow: 'Recent repository',
+    defaultEyebrow: 'Public repository',
     fallbackDescription: 'Details are being documented.'
   },
   toolkit: {
@@ -337,5 +337,8 @@ export const featuredProjects: Record<string, { eyebrow: string; liveUrl?: strin
   RadioWebApp: {
     eyebrow: 'Volunteer production system',
     liveUrl: 'https://cihanradyo.com'
+  },
+  RGBPiano: {
+    eyebrow: 'Most interesting hardware project',
   }
 };
