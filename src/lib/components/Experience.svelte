@@ -20,13 +20,18 @@
 				kicker={role.company}
 				title={role.role}
 				description={role.summary}
-				images={role.images}
+				images={role.images.map((image) => ({ ...image, href: role.website }))}
 				items={role.highlights}
 				chips={role.tools}
 			>
 				{#snippet meta()}
 					<p>{role.dates}</p>
 				{/snippet}
+				{#if role.website}
+					<a class="text-link" href={role.website} target="_blank" rel="noreferrer">
+						Live site <span aria-hidden="true">↗</span>
+					</a>
+				{/if}
 			</Entry>
 		{/each}
 	</div>

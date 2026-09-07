@@ -75,34 +75,52 @@
     "image": "https://raw.githubusercontent.com/ozturkkl/RGBPiano/main/demo/combined.jpg"
   },
   {
-    "id": 197676118,
-    "name": "portfolioSite",
-    "url": "https://github.com/ozturkkl/portfolioSite",
-    "homepage": "http://kozturk.com/",
-    "description": "Personal portfolio site for Kemal Ozturk made by Kemal Ozturk. It consists projects, links and resume.",
-    "language": "CSS",
-    "topics": [
-      "personal-website",
-      "portfolio",
-      "site"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "pushedAt": "2026-09-06T18:05:36Z",
-    "image": "https://user-images.githubusercontent.com/51798197/132264772-2a1af4ec-0cf7-4091-8ac2-c9f52f615220.png"
-  },
-  {
     "id": 1265669895,
     "name": "portfolioSitePhotography",
     "url": "https://github.com/ozturkkl/portfolioSitePhotography",
     "homepage": "https://ilaydaturkmen.com/",
-    "description": null,
+    "description": "A static photography portfolio. Galleries come from a Nextcloud share, get resized at sync time, then ship as a prerendered SvelteKit site. Lightbox with progressive full-resolution images and video, category grids, session pricing, and a contact form. GitHub Pages with a daily photo sync.",
     "language": "Svelte",
-    "topics": [],
+    "topics": [
+      "gallery",
+      "github-pages",
+      "lightbox",
+      "nextcloud",
+      "photography",
+      "portfolio",
+      "sharp",
+      "svelte",
+      "sveltekit",
+      "tailwindcss",
+      "typescript",
+      "vite"
+    ],
     "stars": 0,
     "forks": 0,
-    "pushedAt": "2026-09-06T10:31:42Z",
+    "pushedAt": "2026-09-07T02:08:14Z",
     "image": "https://github.com/user-attachments/assets/316ed5f2-99b7-4bcc-be72-4c679b60b8fc"
+  },
+  {
+    "id": 197676118,
+    "name": "portfolioSite",
+    "url": "https://github.com/ozturkkl/portfolioSite",
+    "homepage": "http://kozturk.com/",
+    "description": "A Svelte 5 single-page portfolio for Kemal Ozturk. Public GitHub repos are snapshotted at build time (README images, topics, descriptions); experience ships with product galleries; contact, resume, and links sit on the same page. Custom CSS around an Ink & Signal palette. Live at kozturk.com.",
+    "language": "CSS",
+    "topics": [
+      "css",
+      "github-actions",
+      "github-pages",
+      "portfolio",
+      "spa",
+      "svelte",
+      "typescript",
+      "vite"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "pushedAt": "2026-09-07T01:53:31Z",
+    "image": "https://user-images.githubusercontent.com/51798197/132264772-2a1af4ec-0cf7-4091-8ac2-c9f52f615220.png"
   },
   {
     "id": 891812162,

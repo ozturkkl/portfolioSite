@@ -64,7 +64,7 @@
 			</header>
 		{/if}
 		<ul class="photo-wall-grid">
-			{#each visible as item (item.href ?? item.src)}
+			{#each visible as item (item.src)}
 				{#snippet frame()}
 					<img
 						src={item.src}
@@ -78,9 +78,12 @@
 				{/snippet}
 				<li class="photo-wall-item">
 					{#if item.href}
+						{@const inPage = item.href.startsWith('#')}
 						<a
 							href={item.href}
-							aria-label={`Jump to ${item.caption}`}
+							target={inPage ? undefined : '_blank'}
+							rel={inPage ? undefined : 'noreferrer'}
+							aria-label={inPage ? `Jump to ${item.caption}` : `Open ${item.caption}`}
 							onclick={(event) => item.href && onselect?.(event, item.href)}
 						>
 							{@render frame()}
@@ -197,32 +200,32 @@
     --angle: -2deg;
     --nudge: 0;
     --shift: 0;
-    width: min(36%, max(9.5rem, 34cqh));
-    margin: -0.85rem;
+    width: min(34%, max(9.5rem, 34cqh));
+    margin: -2.2%;
   }
 
   [data-layout='fill'] .photo-wall-item:nth-child(5n + 2) {
     --angle: 3deg;
     --shift: 0.85rem;
-    width: min(45%, max(11.5rem, 42cqh));
+    width: min(42%, max(11.5rem, 42cqh));
   }
 
   [data-layout='fill'] .photo-wall-item:nth-child(5n + 3) {
     --angle: -4deg;
     --shift: -0.15rem;
-    width: min(31%, max(8.25rem, 29cqh));
+    width: min(30%, max(8.25rem, 29cqh));
   }
 
   [data-layout='fill'] .photo-wall-item:nth-child(5n + 4) {
     --angle: 2deg;
     --shift: 0.2rem;
-    width: min(41%, max(10.5rem, 38cqh));
+    width: min(39%, max(10.5rem, 38cqh));
   }
 
   [data-layout='fill'] .photo-wall-item:nth-child(5n) {
     --angle: -1deg;
     --shift: -0.2rem;
-    width: min(34%, max(9rem, 32cqh));
+    width: min(32%, max(9rem, 32cqh));
   }
 
   [data-layout='stack'] {
@@ -319,14 +322,7 @@
     aspect-ratio: var(--photo-ratio, 4 / 3);
     object-fit: contain;
     object-position: center;
-    filter: grayscale(0.55) saturate(0.75) contrast(1.03);
     background: var(--paper);
-    transition: filter 300ms ease;
-  }
-
-  .photo-wall-item:hover img,
-  .photo-wall-item:focus-within img {
-    filter: none;
   }
 
   .photo-wall-caption {

@@ -174,6 +174,7 @@ export const experience = [
       'Owned recording reliability and incidents across web and desktop: data-loss recovery, MediaRecorder container and device failures, authorization paths, memory telemetry, deploy guards that keep local config out of production bundles, and Support diagnostics.',
       'Raised delivery velocity with reusable AI-assisted review workflows, coding guidelines, and agent instructions that other engineers and agents picked up beyond personal use.'
     ],
+    website: 'https://www.descript.com',
     tools: [
       'TypeScript',
       'React',
@@ -202,6 +203,7 @@ export const experience = [
       'Authored Nx executors and generators that cut feature scaffolding from 30 minutes to 5, and cleaned up services to reduce technical debt across the app.',
       'Profiled CPU and memory across Studio, Chat, Dashboard, and recording UI; fixed leaks including one in the VU meter visualization that was steadily degrading session performance.'
     ],
+    website: 'https://squadcast.fm',
     tools: ['Angular', 'RxJS', 'Tailwind', 'TypeScript', 'Next.js', 'Firebase', 'GCP', 'Nx', 'GitHub CI', 'Google Cloud Functions'],
     images: [workImages.squadCastApp, workImages.squadCastStudio]
   },
@@ -215,6 +217,7 @@ export const experience = [
       'Delivered Node.js, Express, and Handlebars features for records management and analytics: approval workflows, crash diagrams, modular forms, and account recovery. Software that had to be correct when the records mattered.',
       'Led code reviews, maintained the GitHub repository, mentored junior engineers, and built a Leaflet plugin for dynamic crash-map markers.'
     ],
+    website: 'https://www.peel9.com',
     tools: ['Node.js', 'Express', 'Handlebars', 'Leaflet'],
     images: [workImages.peel9Platform]
   }
@@ -328,7 +331,8 @@ export const links = [
 
 export const featuredProjects: Record<string, { eyebrow: string; liveUrl?: string }> = {
   'framework-control': {
-    eyebrow: 'Featured open source'
+    eyebrow: 'Featured open source',
+    liveUrl: 'https://ozturkkl.github.io/framework-control/'
   },
   RadioWebApp: {
     eyebrow: 'Volunteer production system',

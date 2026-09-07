@@ -299,6 +299,17 @@
     }
   }
 
+  @media (min-width: 1600px) {
+    .hero {
+      width: min(100% - 7vw, 1800px);
+      grid-template-columns: minmax(0, 1fr) minmax(26rem, 1.28fr);
+    }
+
+    .hero-wall {
+      width: 100%;
+    }
+  }
+
   @media (max-width: 760px) {
     .hero {
       width: min(100% - 2rem, 42rem);

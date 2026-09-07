@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { ContentImage } from '../data/content';
+	import type { PhotoWallItem } from '../data/content';
 	import PhotoWall from './PhotoWall.svelte';
 
 	let {
@@ -20,7 +20,7 @@
 		title: string;
 		description: string;
 		meta?: Snippet;
-		images?: ContentImage[];
+		images?: PhotoWallItem[];
 		items?: string[];
 		chips?: string[];
 		chipsLabel?: string;

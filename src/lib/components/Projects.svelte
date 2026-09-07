@@ -33,7 +33,8 @@
 							{
 								src: project.image,
 								alt: `README preview from the ${projectTitle} repository`,
-								caption: projectTitle
+								caption: projectTitle,
+								href: liveUrl || project.url
 							}
 						]}
 				chips={[project.language, ...project.topics].filter((chip) => chip != null)}
@@ -41,10 +42,10 @@
 			>
 				{#snippet meta()}
 					<p>Updated {formatDate(project.pushedAt)}</p>
-					{#if project.stars > 0}
+					{#if project.stars >= 10}
 						<p>{project.stars} {project.stars === 1 ? 'star' : 'stars'}</p>
 					{/if}
-					{#if project.forks > 0}
+					{#if project.forks >= 5}
 						<p>{project.forks} {project.forks === 1 ? 'fork' : 'forks'}</p>
 					{/if}
 				{/snippet}
