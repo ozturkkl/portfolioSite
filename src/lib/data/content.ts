@@ -21,32 +21,8 @@ export const site = {
 
 export const heroQuotes = [
   {
-    text: 'The purpose of software engineering is to control complexity, not to create it.',
-    attribution: 'Pamela Zave'
-  },
-  {
-    text: 'Security is a process, not a product.',
-    attribution: 'Bruce Schneier'
-  },
-  {
-    text: 'Make it work, make it right, make it fast.',
-    attribution: 'Kent Beck'
-  },
-  {
-    text: 'The only way to go fast is to go well.',
-    attribution: 'Robert C. Martin'
-  },
-  {
-    text: 'Complexity is the enemy of reliability.',
-    attribution: 'John Allspaw'
-  },
-  {
-    text: 'A distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable.',
-    attribution: 'Leslie Lamport'
-  },
-  {
-    text: 'A complex system that works is invariably found to have evolved from a simple system that worked.',
-    attribution: 'John Gall'
+    text: 'Simplicity is prerequisite for reliability.',
+    attribution: 'Edsger W. Dijkstra'
   },
 ];
 
@@ -66,9 +42,9 @@ export const copy = {
   },
   experience: {
     kicker: 'Experience / 002',
-    title: 'Full-stack systems, from capture to production.',
+    title: 'Software across product, platform, and systems.',
     intro:
-      'Seven years owning products across the stack: management software used by police departments, a web recording studio, then Descript’s video editor, recorder, and Rooms platform. I design the architecture, ship the client and the APIs, and operate what I launch: security, analytics, reliability, and rollout included.'
+      'Seven years designing, shipping, and operating software across web, desktop, and backend services from records management to remote recording and production systems. I lead projects from technical design through rollout, with a focus on reusable architecture, authorization, concurrency, and reliability.'
   },
   projects: {
     kicker: 'Projects / 003',
@@ -164,15 +140,14 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'June 2023 - September 2026',
     summary:
-      'Technical DRI for recording at Descript. I authored the Rooms architecture RFC and led the capture platform end to end: APIs, invite-scoped security, web and desktop clients, staged rollout, and production operations.',
+      'Led projects across Descript’s web, desktop, API, and recording platforms, from technical design and implementation through rollout and production operations.',
     highlights: [
-      'Led Scheduled Rooms from architecture RFC through 100% rollout across Drive, Rooms, APIs, and the recording stack; shipped hostless recording to GA and link-based hosting behind a dedicated safety flag, reaching 500+ weekly creations, over 50% conversion, and about 25% of Rooms recordings.',
-      'Designed invite-scoped authorization as delegated capability, not impersonation: opaque invite links, server-checked host permission, project-scoped credentials, and isolated sessions so a link-holder can record without project membership. Overhauled in-call app messaging with serialization, coalescing, and retries; coordinated mixed-version API and client rollouts, rate limits, and security review.',
-      'Architect and first engineer on the Web Recorder platform: a UI-independent React/TypeScript engine and Redux-Saga orchestration for multi-track camera, microphone, screen, and system audio at 4K/30 FPS, with hot-swappable devices during capture, reused across Editor, Media Library, Quick Recorder, and Rooms.',
-      'Delivered instant playback end to end: re-architected async segment queues to eliminate race conditions, then built a Web Worker upload manager with progressive chunk demuxing, progress-aware timeouts, duplicate protection, and recovery into Temporal workflows, so people could review a take while chunks were still uploading.',
-      'Shipped script-state visualization, cancel/restart, and pre-roll/live playback to GA; tightened A/V sync from about 700 ms to 50 ms. Built an internal WebAssembly denoise effect that preserves voice character without per-use server inference.',
-      'Owned recording reliability and incidents across web and desktop: data-loss recovery, MediaRecorder container and device failures, authorization paths, memory telemetry, deploy guards that keep local config out of production bundles, and Support diagnostics.',
-      'Raised delivery velocity with reusable AI-assisted review workflows, coding guidelines, and agent instructions that other engineers and agents picked up beyond personal use.'
+      'Led Scheduled Rooms from architecture RFC and phased implementation through full rollout, coordinating changes across APIs, permissions, and recording clients. Adoption reached 500+ weekly creations and roughly 25% of Rooms recordings.',
+      'Designed invite-scoped authorization with server-enforced permissions, project-scoped credentials, and isolated sessions, enabling guests to record without project membership. Coordinated security review and staged releases, including hostless recording to general availability.',
+      'Architected the initial Web Recorder engine in TypeScript with Redux-Saga orchestration, separating capture logic from the UI. Reused across Editor, Media Library, Quick Recorder, and Rooms for multi-track camera capture at 4K/30 FPS, microphone, screen, system audio, and device switching.',
+      'Delivered instant playback so users could review takes while recording chunks were still uploading. Built a Web Worker upload manager with progressive uploads and progress-aware timeouts; resolved asynchronous queue races and implemented in-call message serialization and coalescing.',
+      'Shipped recording visualization, cancel/restart, and pre-roll/live playback; improved A/V synchronization from approximately 700 ms to 50 ms. Built an internal RNNoise-backed WebAssembly denoise prototype and profiled capture performance to improve frame rate and bitrate.',
+      'Owned production incident response and recording recovery across web and desktop. Built analytics dashboards, alerts, memory telemetry, deployment safeguards, and Support diagnostics; investigated device failures, authorization errors, and rate-limit issues.'
     ],
     website: 'https://www.descript.com',
     tools: [
@@ -196,12 +171,11 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'January 2022 - August 2023',
     summary:
-      'Owned a remote browser recording product end to end through acquisition: capture engine, auth, onboarding, integrations, account lifecycle, and the Nx tooling that kept the team shipping.',
+      'Built a remote-recording product through its acquisition by Descript, working across capture, product UI, cloud services, performance, and developer tooling.',
     highlights: [
-      'Built and owned core product surfaces across Angular, TypeScript, Next.js, Firebase, and GCP: recording engine, notifications, auth, onboarding, third-party integrations, org and user lifecycle, and scheduling.',
-      'Led Canvas and SquadShots releases; shipped dark mode, mobile-first layouts, accessible custom components, and reusable UI across Studio.',
-      'Authored Nx executors and generators that cut feature scaffolding from 30 minutes to 5, and cleaned up services to reduce technical debt across the app.',
-      'Profiled CPU and memory across Studio, Chat, Dashboard, and recording UI; fixed leaks including one in the VU meter visualization that was steadily degrading session performance.'
+      'Built core remote-recording product features using Angular, TypeScript, Next.js, Firebase, and GCP, spanning capture, authentication, account lifecycle, third-party integrations, and onboarding. Migrated selected microservices to serverless cloud functions to reduce costs and support scaling.',
+      'Designed and delivered Canvas and SquadShots features, app-wide dark mode, mobile-first layouts, and accessibility improvements. Profiled CPU usage and fixed memory leaks across Studio, Chat, Dashboard, and audio metering.',
+      'Created Nx executors and generators that reduced feature scaffolding time from 30 minutes to 5, standardizing setup for new features.'
     ],
     website: 'https://squadcast.fm',
     tools: ['Angular', 'RxJS', 'Tailwind', 'TypeScript', 'Next.js', 'Firebase', 'GCP', 'Nx', 'GitHub CI', 'Google Cloud Functions'],
@@ -212,10 +186,10 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'August 2019 - September 2021',
     summary:
-      'On a small team, I designed and shipped records-management features used by 10+ police departments, and ran reviews, mentoring, and the GitHub repo.',
+      'Built records-management and analytics software for police departments on a small product team.',
     highlights: [
-      'Delivered Node.js, Express, and Handlebars features for records management and analytics: approval workflows, crash diagrams, modular forms, and account recovery. Software that had to be correct when the records mattered.',
-      'Led code reviews, maintained the GitHub repository, mentored junior engineers, and built a Leaflet plugin for dynamic crash-map markers.'
+      'Delivered records-management features used by 10+ police departments around Cincinnati, including incident approval, traffic-crash diagrams, modular forms, and account recovery, using Node.js, Express, and Handlebars.',
+      'Led code reviews and mentored junior engineers; maintained the GitHub repository and built a Leaflet plugin for dynamic crash-map markers.'
     ],
     website: 'https://www.peel9.com',
     tools: ['Node.js', 'Express', 'Handlebars', 'Leaflet'],
@@ -279,6 +253,11 @@ export const linksQuote = {
 };
 
 export const artworks: ContentImage[] = [
+  {
+    src: '/images/other/workstation.jpg',
+    alt: 'A black cat sitting in front of a programming workstation with an ultrawide monitor',
+    caption: 'The boss, reviewing my code'
+  },
   {
     src: '/art/piano.jpg',
     alt: 'Photograph of two miniature grand pianos sitting on a piano',
