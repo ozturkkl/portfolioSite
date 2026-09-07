@@ -55,7 +55,7 @@ export const heroFacts = [
   { label: 'Status', value: 'Open source maintainer' },
   { label: 'Ownership', value: 'Design · ship · operate' },
   { label: 'Surfaces', value: 'Browser · desktop · APIs' },
-  { label: 'Daily driver', value: 'Linux · NixOS' },
+  { label: 'Daily driver', value: 'Linux · NixOS · Arch' },
   { label: 'AI tools', value: 'Cursor · Claude · Codex · Copilot · Zed' }
 ];
 

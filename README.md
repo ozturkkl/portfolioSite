@@ -1,58 +1,62 @@
 # Kemal Ozturk | Portfolio
 
-The source for [kozturk.com](https://kozturk.com), a lean Svelte 5 single-page
-portfolio built around an “Ink & Signal” visual direction.
+A Svelte 5 single-page portfolio for Kemal Ozturk. Public GitHub repos are
+snapshotted at build time; experience ships with product galleries; contact,
+resume, and links sit on the same page. Custom CSS around an Ink & Signal
+palette. Live at kozturk.com.
 
-## Local development
+<p align="center">
+  <img src="demo/hero.png" alt="kozturk.com hero — headline, rotating quote, and overlapping project wall" width="800" />
+</p>
+
+## Features
+
+- **Photo wall** — overlapping frames from experience shots and GitHub README
+  images; a frame jumps to that card
+- **Experience** — roles with highlights, tool chips, and product galleries
+- **Projects** — public GitHub repos as cards (description, language, topics,
+  README preview). Featured repos can add an eyebrow or live URL
+- **Contact** — form to inbox, plus resume and profile links
+
+## Stack
+
+Svelte 5 · TypeScript · Vite · custom CSS · GitHub REST API · GitHub Actions ·
+GitHub Pages · Web3Forms
+
+## How it is put together
+
+```
+content.ts  ── copy, experience, toolkit, links ──▶  Svelte 5 SPA
+GitHub API ── build-time snapshot ──▶  projects.generated.json
+                                         │
+                                         ├─ project cards
+                                         └─ photo-wall frames
+Web3Forms  ◀── contact form
+GitHub Pages ◀── dist/  (CI on master)
+```
+
+Site copy lives in `src/lib/data/content.ts`. GitHub owns project
+descriptions, topics, and README images.
+
+## Getting started
+
+Node 22+. Optional `.env` from `.env.example` (`VITE_WEB3FORMS_ACCESS_KEY` for
+the contact form; `GITHUB_TOKEN` if you want a higher-rate project refresh).
 
 ```bash
 npm install
 npm run dev
 ```
 
-Run `npm run check` for Svelte and TypeScript validation. `npm run build`
-refreshes GitHub projects and writes the production site to `dist/`.
+`npm run check` validates Svelte and TypeScript. `npm run build` refreshes
+GitHub projects, then writes `dist/`. `npm run projects` runs the snapshot
+alone.
 
-## Content
-
-- `src/lib/data/content.ts` contains biography, experience, skills, featured
-  project context, experience images, manual photo-wall entries, and links.
-- `src/lib/data/projects.generated.json` is the last successful GitHub snapshot.
-- `public/art/` contains Kemal's artwork.
-- `public/images/experience/` contains app and company product images.
-- `public/Kemal-Ozturk-Resume-2026.pdf` is the downloadable resume.
-- `.old/` preserves the previous static site.
-
-The canonical career source is
-`../resume/resume.html`. LinkedIn remains a public profile link rather than a
-live data dependency because its API does not expose complete work history to a
-normal personal-site integration.
-
-After editing the resume, copy the regenerated PDF into `public/` and update
-`src/lib/data/content.ts` when the public career details changed.
-
-The homepage photo wall automatically includes GitHub README images. Add
-non-GitHub frames to `photoWallItems` with a public image path, accessible alt
-text, caption, and destination anchor. Add one or more product screenshots to an
-experience entry's `images` array; its gallery appears automatically.
-
-## GitHub projects
-
-```bash
-npm run projects
-```
-
-The build script fetches every public repository, excludes archived repositories
-and forks, then reads the first useful non-badge image from each README. Missing descriptions and images use honest
-visual fallbacks in the UI. If GitHub is temporarily unavailable, an existing
-non-empty snapshot is retained.
-
-Featured projects can set an eyebrow label (and optional live URL) in
-`src/lib/data/content.ts`; descriptions and other details remain GitHub-owned.
+The snapshot fetches public repos (no archives or forks) and takes the first
+useful README image. If GitHub is down, an existing non-empty snapshot is kept.
 
 ## Deployment
 
-Pushes to `master` run `.github/workflows/deploy.yml`, refresh project data, run
-checks, build the app, and deploy `dist/` to GitHub Pages. The repository's Pages
-source must be set to **GitHub Actions**. `public/CNAME` preserves the
-`kozturk.com` custom domain.
+Pushes to `master` run `.github/workflows/deploy.yml`: refresh projects, check,
+build, deploy `dist/` to GitHub Pages. Pages source must be **GitHub Actions**.
+`public/CNAME` keeps the `kozturk.com` custom domain.
