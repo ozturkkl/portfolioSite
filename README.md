@@ -47,8 +47,8 @@ and forks, then reads the first useful non-badge image from each README. Missing
 visual fallbacks in the UI. If GitHub is temporarily unavailable, an existing
 non-empty snapshot is retained.
 
-Framework Control and RadioWebApp receive additional featured context in
-`src/lib/data/content.ts`; all other project details remain GitHub-owned.
+Featured projects can set an eyebrow label (and optional live URL) in
+`src/lib/data/content.ts`; descriptions and other details remain GitHub-owned.
 
 ## Deployment
 

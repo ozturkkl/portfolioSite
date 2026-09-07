@@ -15,9 +15,9 @@
       "rust",
       "svelte"
     ],
-    "stars": 221,
+    "stars": 222,
     "forks": 7,
-    "pushedAt": "2026-08-25T06:05:24Z",
+    "pushedAt": "2026-09-04T16:58:56Z",
     "image": "https://github.com/user-attachments/assets/69c5afe0-f316-4c62-933b-98d07fea8ee0"
   },
   {
@@ -25,39 +25,54 @@
     "name": "RadioWebApp",
     "url": "https://github.com/ozturkkl/RadioWebApp",
     "homepage": null,
-    "description": "A web app that displays radios, and podcasts using podcast RSS feeds.",
+    "description": "A configurable radio and podcast player for live streams and RSS archives. Listeners get lock-screen controls, continue-listening, Turkish-aware search, and Google Drive sync of progress and favorites. Ships as a PWA and Android app.",
     "language": "TypeScript",
-    "topics": [],
+    "topics": [
+      "daisyui",
+      "lucide-icons",
+      "podcast",
+      "pwa",
+      "radio",
+      "rss",
+      "svelte",
+      "sveltekit",
+      "tailwindcss",
+      "typescript",
+      "vite"
+    ],
     "stars": 2,
     "forks": 1,
-    "pushedAt": "2026-08-22T02:34:43Z",
-    "image": null
+    "pushedAt": "2026-09-07T01:15:39Z",
+    "image": "https://raw.githubusercontent.com/ozturkkl/RadioWebApp/main/demo/combined.png"
   },
   {
     "id": 640329888,
     "name": "RGBPiano",
     "url": "https://github.com/ozturkkl/RGBPiano",
     "homepage": null,
-    "description": "Piano RGB LED controller. Will light up LED strip when keys are pressed.",
+    "description": "Light up a WS2812 LED strip behind your piano as you play. MIDI from your computer is mapped to LED frames on the host, then streamed over WiFi to a Raspberry Pi Zero that drives the strip. A local Svelte UI covers colors, brightness, key mapping, and note envelopes.",
     "language": "TypeScript",
-    "topics": [],
+    "topics": [
+      "daisyui",
+      "hardware",
+      "led-strip",
+      "led-strips",
+      "midi",
+      "phython",
+      "piano",
+      "raspberry-pi",
+      "rgb",
+      "svelte",
+      "tailwindcss",
+      "typescript",
+      "vite",
+      "websocket",
+      "ws2812"
+    ],
     "stars": 1,
     "forks": 0,
-    "pushedAt": "2026-07-19T23:40:36Z",
-    "image": "https://github.com/ozturkkl/RGBPiano/assets/51798197/996cd7ff-adf1-42fd-bbfb-e13fc2055af6"
-  },
-  {
-    "id": 1265669895,
-    "name": "portfolioSitePhotography",
-    "url": "https://github.com/ozturkkl/portfolioSitePhotography",
-    "homepage": "https://ilaydaturkmen.com/",
-    "description": null,
-    "language": "Svelte",
-    "topics": [],
-    "stars": 0,
-    "forks": 0,
-    "pushedAt": "2026-09-01T11:20:19Z",
-    "image": "https://github.com/user-attachments/assets/316ed5f2-99b7-4bcc-be72-4c679b60b8fc"
+    "pushedAt": "2026-09-07T01:39:03Z",
+    "image": "https://raw.githubusercontent.com/ozturkkl/RGBPiano/main/demo/combined.jpg"
   },
   {
     "id": 197676118,
@@ -73,8 +88,21 @@
     ],
     "stars": 0,
     "forks": 0,
-    "pushedAt": "2026-06-02T20:29:04Z",
+    "pushedAt": "2026-09-06T18:05:36Z",
     "image": "https://user-images.githubusercontent.com/51798197/132264772-2a1af4ec-0cf7-4091-8ac2-c9f52f615220.png"
+  },
+  {
+    "id": 1265669895,
+    "name": "portfolioSitePhotography",
+    "url": "https://github.com/ozturkkl/portfolioSitePhotography",
+    "homepage": "https://ilaydaturkmen.com/",
+    "description": null,
+    "language": "Svelte",
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "pushedAt": "2026-09-06T10:31:42Z",
+    "image": "https://github.com/user-attachments/assets/316ed5f2-99b7-4bcc-be72-4c679b60b8fc"
   },
   {
     "id": 891812162,

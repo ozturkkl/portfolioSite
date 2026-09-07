@@ -26,7 +26,7 @@
 				id={`project-${project.name}`}
 				kicker={featured?.eyebrow ?? copy.projects.defaultEyebrow}
 				title={projectTitle}
-				description={featured?.impact ?? project.description ?? copy.projects.fallbackDescription}
+				description={project.description ?? copy.projects.fallbackDescription}
 				images={project.image === null
 					? []
 					: [

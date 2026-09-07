@@ -326,19 +326,12 @@ export const links = [
   }
 ];
 
-export const featuredProjects: Record<
-  string,
-  { eyebrow: string; impact: string; liveUrl?: string }
-> = {
+export const featuredProjects: Record<string, { eyebrow: string; liveUrl?: string }> = {
   'framework-control': {
-    eyebrow: 'Featured open source',
-    impact:
-      'I designed and still maintain the full stack: a Rust service (Tokio, Poem, OpenAPI) and a Svelte/Vite UI for live telemetry, fan curves, battery charging, and AMD power controls. Windows MSI, Linux systemd/udev, AUR, nixpkgs, and NixOS. Solo-maintained, 220+ stars.'
+    eyebrow: 'Featured open source'
   },
   RadioWebApp: {
     eyebrow: 'Volunteer production system',
-    impact:
-      'I built and still operate this Svelte/TypeScript PWA for Cihan Radyo. About 1.4K daily visitors, 334K requests, and 20 GB/day through Cloudflare, with 61% cached.',
     liveUrl: 'https://cihanradyo.com'
   }
 };
