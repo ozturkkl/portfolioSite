@@ -22,7 +22,7 @@ export const site = {
 export const heroTypingLines = [
   'huge nerd riding on the edge of awkward',
   'open-source maintainer',
-  'pianist, artist, tea addict',
+  'pianist, artist, loving husband, tea addict',
   'Linux enjoyer, I use Nix BTW',
   'Mancho\'s (my cat) direct report'
 ];
