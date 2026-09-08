@@ -3,7 +3,7 @@ export const profile = {
   role: 'Software Engineer',
   location: 'Wheeling, Illinois',
   email: '97kemalozturk@gmail.com',
-  title: 'I engineer the path from an idea to a system people can trust.'
+  title: 'Hi, I’m Kemal.'
 };
 
 export const resumeUrl = '/Kemal-Ozturk-Resume-2026.pdf';
@@ -12,33 +12,36 @@ export const site = {
   url: 'https://kozturk.com',
   title: `${profile.name} | ${profile.role}`,
   description:
-    'Kemal Ozturk is a fullstack software engineer who designs, ships, and operates systems end to end. TypeScript product work, APIs, security, reliability, and open source. Uses Cursor, Claude Code, Codex, Copilot, and Zed to move faster without lowering the quality bar.',
+    'Kemal Ozturk is a software engineer, open-source maintainer, Linux tinkerer, and pianist building products across web, desktop, backend services, and hardware.',
   shareDescription:
-    'Fullstack engineer: system design, secure APIs, recording and reliability, open source, and AI-assisted delivery. Explore Kemal\'s work, projects, and links.',
+    'Software engineer building products, platforms, and hardware tools. Explore Kemal’s experience, open-source work, and side projects.',
   imagePath: '/images/other/kemal.jpg',
   themeColor: '#171815'
 };
 
-export const heroQuotes = [
-  {
-    text: 'Simplicity is prerequisite for reliability.',
-    attribution: 'Edsger W. Dijkstra'
-  },
+export const heroTypingLines = [
+  'software engineer',
+  'open-source maintainer',
+  'Linux tinkerer',
+  'pianist, artist, tea addict',
+  'mancho\'s (my cat) direct report'
 ];
 
 export const heroFacts = [
-  { label: 'Tenure', value: '7 years · fullstack' },
-  { label: 'Status', value: 'Open source maintainer' },
-  { label: 'Ownership', value: 'Design · ship · operate' },
-  { label: 'Surfaces', value: 'Browser · desktop · APIs' },
+  { label: 'Work', value: 'Software engineer · 7 years' },
+  { label: 'Builds', value: 'Product · platform · systems' },
+  { label: 'Side quests', value: 'Rust · hardware · radio' },
   { label: 'Daily driver', value: 'Linux · NixOS · Arch' },
-  { label: 'AI tools', value: 'Cursor · Claude · Codex · Copilot · Zed' }
+  { label: 'Off the clock', value: 'Piano · art · swimming' }
 ];
 
 export const copy = {
   hero: {
     kicker: 'Intro / 001',
-    photoWallLabel: 'PROJECT WALL / SELECT A FRAME'
+    intro:
+      'I like building useful things and sweating the details: from remote recording tools at Descript, to a system service that controls my laptop fans. Oh, and I also make my piano lights up when I play. Welcome, and thanks for checking out my portfolio!',
+    terminalPrompt: 'kemal@workstation:~$ whoami',
+    photoWallLabel: 'BUILT, SHIPPED & TINKERED WITH / PICK A FRAME'
   },
   experience: {
     kicker: 'Experience / 002',
@@ -99,6 +102,14 @@ export type ContentImage = {
 
 export type PhotoWallItem = ContentImage & {
   href?: string;
+};
+
+export type PhotoWallContentItem = PhotoWallItem | { projectName: string };
+
+const workstationImage: ContentImage = {
+  src: '/images/other/workstation.jpg',
+  alt: 'A black cat sitting in front of a programming workstation with an ultrawide monitor',
+  caption: 'The boss, reviewing my code'
 };
 
 const workImages = {
@@ -197,10 +208,16 @@ export const experience = [
   }
 ];
 
-export const photoWallItems: PhotoWallItem[] = [
+export const photoWallItems: PhotoWallContentItem[] = [
+  { ...workstationImage, href: '#links' },
   { ...workImages.descriptRooms, href: '#experience-descript' },
   { ...workImages.squadCastStudio, href: '#experience-squadcast' },
-  { ...workImages.peel9Platform, href: '#experience-peel9' }
+  { ...workImages.peel9Platform, href: '#experience-peel9' },
+  { projectName: 'RadioWebApp' },
+  { projectName: 'RGBPiano' },
+  { projectName: 'framework-control' },
+  { projectName: 'portfolioSite' },
+  { projectName: 'portfolioSitePhotography' }
 ];
 
 export const skillGroups = [
@@ -253,11 +270,7 @@ export const linksQuote = {
 };
 
 export const artworks: ContentImage[] = [
-  {
-    src: '/images/other/workstation.jpg',
-    alt: 'A black cat sitting in front of a programming workstation with an ultrawide monitor',
-    caption: 'The boss, reviewing my code'
-  },
+  workstationImage,
   {
     src: '/art/piano.jpg',
     alt: 'Photograph of two miniature grand pianos sitting on a piano',

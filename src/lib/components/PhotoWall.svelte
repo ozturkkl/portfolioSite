@@ -152,11 +152,11 @@
 
   [data-layout='fill'] .photo-wall-grid {
     display: flex;
-    padding: calc(var(--photo-overlap) + 0.55rem) var(--photo-overlap) var(--photo-overlap);
+    padding: clamp(0.75rem, 2.5cqw, 1.25rem);
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    gap: 0;
+    gap: 1.5rem 0;
   }
 
   .photo-wall-item {
@@ -226,6 +226,11 @@
     --angle: -1deg;
     --shift: -0.2rem;
     width: min(32%, max(9rem, 32cqh));
+  }
+
+  [data-layout='fill'] .photo-wall-item a,
+  [data-layout='fill'] .photo-wall-item div {
+    box-shadow: 0 0 0.8rem rgb(0 0 0 / 24%);
   }
 
   [data-layout='stack'] {
