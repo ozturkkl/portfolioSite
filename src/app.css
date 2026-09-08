@@ -244,8 +244,6 @@ ul {
 
 .section-copy {
   display: grid;
-  align-items: center;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-copy);
 }
 
@@ -303,10 +301,6 @@ ul {
 @media (max-width: 1050px) {
   :root {
     --anchor-gap: var(--space-cluster);
-  }
-
-  .section-copy {
-    grid-template-columns: 1fr;
   }
 }
 

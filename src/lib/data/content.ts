@@ -28,54 +28,84 @@ export const heroTypingLines = [
 ];
 
 export const heroFacts = [
-  { label: 'Work', value: 'Software engineer · 7 years' },
-  { label: 'Builds', value: 'Product · platform · systems' },
-  { label: 'Side quests', value: 'Rust · hardware · radio' },
-  { label: 'Daily driver', value: 'Linux · NixOS · Arch' },
-  { label: 'Off the clock', value: 'Piano · art · swimming' }
+  { label: 'Work', value: 'Full-stack engineer · 7 years' },
+  { label: 'Builds', value: 'Apps · Systems · Experiences' },
+  { label: 'Side quests', value: 'Make Tea · Learn Rust · Pet Cat' },
+  { label: 'Daily driver', value: 'Dygma Defy · NixOS · Framework Laptop' },
+  { label: 'Off the clock', value: 'Piano · Art · Swimming' },
+  { label: 'Passion', value: 'Open-source · Linux · Gaming' }
 ];
+
+type CopySegment = {
+  text: string;
+  href?: string;
+  color?: string;
+};
 
 export const copy = {
   hero: {
     kicker: 'Intro / 001',
-    intro:
-      'I like building useful things and sweating the details: from remote recording tools at Descript, to a system service that controls my laptop fans. Oh, and I also make my piano light up when I play. Welcome, and thanks for checking out my portfolio!',
+    intro: [
+      [
+        { text: 'I like building useful things and sweating the details: from ' },
+        {
+          text: 'remote recording ',
+          href: '#experience-descript',
+          color: '#ff6a4c'
+        },
+        { text: 'tools at Descript, to a ' },
+        {
+          text: 'system service',
+          href: '#project-framework-control',
+          color: '#21ff97'
+        },
+        { text: ' that controls my laptop fans.' },
+        { text: ' I have an ' },
+        {
+          text: 'RGB Piano ',
+          href: '#project-RGBPiano',
+          color: '#ce89ff'
+        },
+        { text: 'that lights up when I play.' }
+      ],
+      [{ text: 'Welcome, and thanks for checking out my portfolio!' }]
+    ] satisfies CopySegment[][],
     terminalPrompt: 'kemal@workstation:~$ whoami',
-    photoWallLabel: 'BUILT, SHIPPED & TINKERED WITH / PICK A FRAME'
+    photoWallLabel: 'PHOTO WALL / PICK A FRAME'
   },
   experience: {
     kicker: 'Experience / 002',
-    title: 'Software across product, platform, and systems.',
+    title: 'I build software, but you already know that',
     intro:
-      'Seven years designing, shipping, and operating software across web, desktop, and backend services from records management to remote recording and production systems. I lead projects from technical design through rollout, with a focus on reusable architecture, authorization, concurrency, and reliability.'
+      'Seven years designing, shipping, and operating software across web, desktop, and backend services. I lead projects from technical design through rollout, I love what I build, and build what I love.'
   },
   projects: {
     kicker: 'Projects / 003',
-    title: 'The same craft, kept after hours and still upkept with care.',
+    title: 'The same craft, after hours, with care, and you guessed it, tea...',
     intro:
-      'Dedicated to my craft: getting the details right, keeping a quality bar I will not lower, and building things that genuinely help other people.',
+      'I don\'t "vibe code", tech debt is a killer for someone like me keeping many side projects alive. Quality is not an optional argument (pun intended).',
     defaultEyebrow: 'Public repository',
     fallbackDescription: 'Details are being documented.'
   },
   toolkit: {
     kicker: 'Toolkit / 004',
-    title: 'Using the latest and greatest to move faster without lowering the quality bar.',
+    title: `You've read this far? I'm impressed. Unless you're a bot that is`,
     intro:
-      'Tools follow the problem, not the other way around. TypeScript for product surfaces, platform services for rollout and reliability, and Rust or Nix when the work has to sit close to hardware. Agents speed drafting and review. The cards below mention some of them but are not strict limits.',
-    labPrefix: 'LAB'
+      `A good tool is an underrated blessing, you only notice it's worth in it's absence. Once in a while you discover a new tool and the excitement of learing is re-kindled, there's no better feeling.`,
+    labPrefix: 'KIT'
   },
   links: {
     kicker: 'Links / 005',
-    profileKicker: 'Profile / Personal',
-    studioLabel: 'Off the clock / Piano',
+    profileKicker: `FRESH AIR > AIR FRESHENER`,
+    studioLabel: `A story that will break your heart / Piano`,
     studioVideoUrl: 'https://www.youtube.com/embed/xPM4-vwgMBc?si=BBRh8Z6edg7iDuD3',
     studioVideoTitle: 'Kemal Ozturk performing a piano cover'
   },
   contact: {
     kicker: 'Contact / 006',
-    title: 'Building something that has to be dependable and stay up?',
+    title: `Well, not much left, just a form for contact`,
     intro:
-      'If you need an engineer who can take a system across client, API, and production, send a note. It lands in my inbox. LinkedIn and the resume are here if that is easier.',
+      `If you need an engineer who can take a system across client, API, and production, send a note. Or maybe just send a note to see if the form works, you can say: "I'm testing the form, please disregard" and I'll know what to do.`,
     asideKicker: 'Also / Direct',
     placeholder: 'Want me to join your team? Tell me about what you are shipping, and where you need help.',
     hint: 'Ctrl/Cmd + Enter also sends.',
@@ -151,7 +181,7 @@ export const experience = [
     role: 'Software Engineer',
     dates: 'June 2023 - September 2026',
     summary:
-      'Led projects across Descript’s web, desktop, API, and recording platforms, from technical design and implementation through rollout and production operations.',
+      `Led projects across Descript's web, desktop, API, and recording platforms, from technical design and implementation through rollout and production operations.`,
     highlights: [
       'Led Scheduled Rooms from architecture RFC and phased implementation through full rollout, coordinating changes across APIs, permissions, and recording clients. Adoption reached 500+ weekly creations and roughly 25% of Rooms recordings.',
       'Designed invite-scoped authorization with server-enforced permissions, project-scoped credentials, and isolated sessions, enabling guests to record without project membership. Coordinated security review and staged releases, including hostless recording to general availability.',

@@ -100,7 +100,19 @@
 					<span>{typedText}</span><span class="terminal-cursor"></span>
 				</p>
 			</div>
-			<p class="hero-summary">{copy.hero.intro}</p>
+			<div class="hero-summary">
+				{#each copy.hero.intro as paragraph}
+					<p>
+						{#each paragraph as segment}
+							{#if segment.href}
+								<a href={segment.href} style:color={segment.color}>{segment.text}</a>
+							{:else}
+								<span style:color={segment.color}>{segment.text}</span>
+							{/if}
+						{/each}
+					</p>
+				{/each}
+			</div>
 			<div class="hero-actions">
 				<a class="button-link primary" href="#projects">See what I’ve built</a>
 				<a class="button-link secondary" href="#experience">Read my experience</a>
@@ -196,6 +208,14 @@
     color: var(--paper-muted);
     font-size: clamp(0.98rem, 1.15vw, 1.12rem);
     line-height: 1.65;
+  }
+
+  .hero-summary p + p {
+    margin-top: 0.55rem;
+  }
+
+  .hero-summary a {
+    text-decoration: none;
   }
 
   .terminal-intro {
