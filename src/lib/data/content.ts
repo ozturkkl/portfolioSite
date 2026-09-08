@@ -51,20 +51,20 @@ export const copy = {
         {
           text: 'remote recording ',
           href: '#experience-descript',
-          color: '#ff6a4c'
+          color: 'hsl(10, 100%, 65%)'
         },
         { text: 'tools at Descript, to a ' },
         {
           text: 'system service',
           href: '#project-framework-control',
-          color: '#21ff97'
+          color: 'hsl(152, 100%, 55%)'
         },
         { text: ' that controls my laptop fans.' },
         { text: ' I have an ' },
         {
           text: 'RGB Piano ',
           href: '#project-RGBPiano',
-          color: '#ce89ff'
+          color: 'hsl(275, 100%, 75%)'
         },
         { text: 'that lights up when I play.' }
       ],
@@ -137,39 +137,39 @@ export type PhotoWallItem = ContentImage & {
 export type PhotoWallContentItem = PhotoWallItem | { projectName: string };
 
 const workstationImage: ContentImage = {
-  src: '/images/other/workstation.jpg',
+  src: '/images/other/workstation.webp',
   alt: 'A black cat sitting in front of a programming workstation with an ultrawide monitor',
   caption: 'The boss, reviewing my code'
 };
 
 const workImages = {
   descriptRooms: {
-    src: '/images/experience/descript-rooms.png',
+    src: '/images/experience/descript-rooms.webp',
     alt: 'Descript Rooms interface showing a remote recording and production controls',
     caption: 'Descript Rooms'
   },
   descriptApp: {
-    src: '/images/experience/descript-app.png',
+    src: '/images/experience/descript-app.webp',
     alt: 'Descript main app surrounded by examples of the UI components',
     caption: 'Descript App'
   },
   descriptEditor: {
-    src: '/images/experience/descript-editor.png',
+    src: '/images/experience/descript-editor.webp',
     alt: 'Descript project editor with its script, scene, timeline, and sidebar labeled',
     caption: 'Descript Editor'
   },
   squadCastApp: {
-    src: '/images/experience/squadcast.png',
+    src: '/images/experience/squadcast.webp',
     alt: 'SquadCast recording studio shown across desktop, tablet, and phone',
     caption: 'SquadCast App'
   },
   squadCastStudio: {
-    src: '/images/experience/squadcast-studio.png',
+    src: '/images/experience/squadcast-studio.webp',
     alt: 'SquadCast recording studio shown across desktop, tablet, and phone',
     caption: 'SquadCast Studio'
   },
   peel9Platform: {
-    src: '/images/experience/peel9.png',
+    src: '/images/experience/peel9.webp',
     alt: 'Peel9 records management and analytics website',
     caption: 'Peel9 RMS'
   }

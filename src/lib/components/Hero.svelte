@@ -114,8 +114,8 @@
 				{/each}
 			</div>
 			<div class="hero-actions">
-				<a class="button-link primary" href="#projects">See what I’ve built</a>
-				<a class="button-link secondary" href="#experience">Read my experience</a>
+				<a class="button-link primary" href="#experience">Read my experience</a>
+				<a class="button-link secondary" href="#projects">See what I’ve built</a>
 			</div>
 		</div>
 	</div>
