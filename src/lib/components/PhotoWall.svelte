@@ -35,6 +35,9 @@
 	const maxPhotoRatio = 5 / 3;
 
 	const fitPhoto: Attachment<HTMLImageElement> = (img) => {
+		let active = true;
+		let revealFrame = 0;
+
 		const apply = () => {
 			if (img.naturalWidth === 0 || img.naturalHeight === 0) {
 				return;
@@ -46,9 +49,24 @@
 			img.style.setProperty('--photo-ratio', `${fitted}`);
 		};
 
-		apply();
-		img.addEventListener('load', apply);
-		return () => img.removeEventListener('load', apply);
+		const reveal = async () => {
+			apply();
+			await img.decode().catch(() => undefined);
+			if (!active || img.naturalWidth === 0) return;
+
+			revealFrame = requestAnimationFrame(() => {
+				img.closest('.photo-wall-item')?.classList.add('is-ready');
+			});
+		};
+
+		if (img.complete) void reveal();
+		else img.addEventListener('load', reveal, { once: true });
+
+		return () => {
+			active = false;
+			cancelAnimationFrame(revealFrame);
+			img.removeEventListener('load', reveal);
+		};
 	};
 </script>
 
@@ -180,8 +198,17 @@
 
   .photo-wall-item > a,
   .photo-wall-item > div {
-    transform: rotate(var(--angle)) translate(var(--nudge), var(--shift, 0));
-    transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: rotate(var(--angle)) translate(var(--nudge), var(--shift, 0)) scale(0.8);
+    transition:
+      opacity 100ms ease-out,
+      transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .photo-wall-item:global(.is-ready) > a,
+  .photo-wall-item:global(.is-ready) > div {
+    opacity: 1;
+    transform: rotate(var(--angle)) translate(var(--nudge), var(--shift, 0)) scale(1);
   }
 
   .photo-wall-item:nth-child(5n + 2) {
@@ -486,6 +513,13 @@
 
     .photo-wall[data-collapsed='true'] .photo-wall-item img {
       height: 9rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .photo-wall-item > a,
+    .photo-wall-item > div {
+      transition: none;
     }
   }
 </style>
