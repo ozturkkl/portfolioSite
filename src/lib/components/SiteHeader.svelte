@@ -149,7 +149,7 @@
     cursor: pointer;
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 860px) {
     .site-header {
       min-height: 64px;
       padding-inline: 1rem;

@@ -131,7 +131,6 @@
     display: flex;
     align-self: start;
     justify-content: space-between;
-    margin: 0;
     gap: 1rem;
     padding-inline: var(--space-kicker);
     color: var(--signal);
@@ -152,7 +151,6 @@
 
   .photo-wall-grid {
     display: grid;
-    align-self: stretch;
     min-height: 0;
     padding: 1rem 0.15rem 1.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -165,7 +163,7 @@
     display: flex;
     padding: clamp(0.75rem, 2.5cqw, 1.25rem);
     flex-wrap: wrap;
-    align-content: center;
+    align-content: safe center;
     justify-content: center;
     gap: 1.5rem 0;
   }
@@ -263,7 +261,6 @@
     align-items: center;
     justify-content: center;
     gap: 1.85rem;
-    grid-template-columns: minmax(0, 1fr);
   }
 
   .photo-wall[data-layout='stack'][data-collapsed='false'],
@@ -285,11 +282,9 @@
   }
 
   [data-layout='grid'] .photo-wall-grid {
-    display: grid;
     align-self: start;
     min-width: 0;
     padding: 0.85rem 0.55rem 1.1rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.85rem 0.65rem;
     align-items: start;
   }
@@ -351,7 +346,6 @@
     height: auto;
     aspect-ratio: var(--photo-ratio, 4 / 3);
     object-fit: contain;
-    object-position: center;
     background: var(--paper);
   }
 
@@ -378,6 +372,7 @@
     display: grid;
     height: 100%;
     padding: 0;
+    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
     place-items: center;
   }
 
@@ -386,7 +381,6 @@
   .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 3),
   .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 4),
   .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n) {
-    position: relative;
     width: min(92%, 12.5rem);
     grid-area: 1 / 1;
     --angle: -5deg;
@@ -422,7 +416,7 @@
     display: none;
   }
 
-  @media (max-width: 1050px) {
+  @media (max-width: 1120px) {
     .photo-wall[data-layout='fill'] {
       height: auto;
       overflow: visible;
@@ -437,8 +431,6 @@
     [data-layout='fill'] .photo-wall-grid {
       display: grid;
       padding: 1rem 0.15rem 1.5rem;
-      overflow: visible;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.35rem 0.45rem;
       align-content: start;
     }
@@ -483,7 +475,7 @@
     }
   }
 
-  @media (max-width: 680px) {
+  @media (max-width: 860px) {
     .photo-wall[data-collapsed='true'] .photo-wall-item,
     .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 2),
     .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 3),

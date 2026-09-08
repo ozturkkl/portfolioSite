@@ -114,7 +114,7 @@
 				{/each}
 			</div>
 			<div class="hero-actions">
-				<a class="button-link primary" href="#experience">Read my experience</a>
+				<a class="button-link primary" href="#experience">My experience</a>
 				<a class="button-link secondary" href="#projects">See what I’ve built</a>
 			</div>
 		</div>
@@ -135,34 +135,27 @@
 <style>
   .hero {
     display: grid;
-    align-content: stretch;
-    width: min(100% - 7vw, 1280px);
+    width: min(100% - max(2rem, 7vw), 1280px);
     height: 100svh;
-    min-height: 100svh;
-    max-height: 100svh;
     margin-inline: auto;
     padding: calc(var(--header-height) + var(--anchor-gap)) 0 2rem;
-    grid-template-columns: minmax(0, 39rem) minmax(24rem, 1fr);
+    grid-template-columns: 28rem minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) auto;
-    column-gap: clamp(0.85rem, 2vw, 1.75rem);
+    column-gap: 1rem;
     row-gap: 0.65rem;
   }
 
   .hero-primary {
     display: grid;
     grid-template-rows: auto minmax(0, 1fr);
-    align-self: stretch;
     min-width: 0;
     min-height: 0;
   }
 
   .hero-wall {
     display: grid;
-    align-self: stretch;
     min-width: 0;
     min-height: 0;
-    width: 100%;
-    justify-self: stretch;
     overflow: hidden;
     container-type: size;
   }
@@ -171,14 +164,12 @@
     position: relative;
     z-index: 1;
     align-self: center;
-    width: min(100%, 39rem);
   }
 
   .hero-kicker {
     display: flex;
     align-self: start;
     justify-content: space-between;
-    width: 100%;
     max-width: 36rem;
     color: var(--paper-muted);
     font-family: var(--mono);
@@ -194,19 +185,18 @@
 
   .hero h1 {
     max-width: 12ch;
-    margin-top: 0;
     font-family: var(--serif);
-    font-size: clamp(3.05rem, 5.2vw, 6.15rem);
+    font-size: 4.5rem;
     font-weight: 400;
     letter-spacing: -0.055em;
     line-height: 0.92;
   }
 
   .hero-summary {
-    max-width: 38rem;
+    max-width: 37rem;
     margin-top: 1.35rem;
     color: var(--paper-muted);
-    font-size: clamp(0.98rem, 1.15vw, 1.12rem);
+    font-size: 1rem;
     line-height: 1.65;
   }
 
@@ -226,7 +216,7 @@
     background: rgb(11 11 10 / 52%);
     box-shadow: 0.45rem 0.5rem 0 rgb(0 0 0 / 18%);
     font-family: var(--mono);
-    font-size: clamp(0.72rem, 1vw, 0.82rem);
+    font-size: 0.78rem;
     line-height: 1.55;
   }
 
@@ -276,8 +266,6 @@
   @media (max-width: 1120px) {
     .hero {
       height: auto;
-      min-height: 0;
-      max-height: none;
       padding: calc(var(--header-height) + var(--anchor-gap)) 0 4rem;
       grid-template-columns: 1fr;
       grid-template-rows: none;
@@ -300,17 +288,10 @@
       display: grid;
       justify-items: center;
       text-align: center;
-      align-self: stretch;
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-size: clamp(3.55rem, 12vw, 4.5rem);
     }
 
     .hero-summary {
       max-width: 38rem;
-      font-size: clamp(1rem, 3.6vw, 1.12rem);
     }
 
     .hero-kicker {
@@ -326,9 +307,9 @@
     }
   }
 
-  @media (max-width: 760px) {
-    .hero {
-      width: min(100% - 2rem, 42rem);
+  @media (max-width: 860px) {
+    .hero h1 {
+      font-size: 3.5rem;
     }
   }
 

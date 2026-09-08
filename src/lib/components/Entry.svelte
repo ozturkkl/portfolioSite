@@ -117,7 +117,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.55rem 1.15rem;
-    width: 100%;
   }
 
   .entry-kicker {

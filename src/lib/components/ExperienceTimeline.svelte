@@ -306,12 +306,13 @@
 
 	.timeline-entry:not(.is-open) .timeline-details {
 		position: absolute;
-		top: clamp(1.5rem, 3vw, 2.25rem);
+		top: 50%;
 		right: 0;
 		display: block;
 		width: min(14.25rem, 19vw);
 		height: 8.25rem;
 		padding: 0;
+		transform: translateY(-50%);
 	}
 
 	.timeline-entry:not(.is-open) .timeline-wall {
@@ -411,11 +412,7 @@
 		letter-spacing: 0.04em;
 	}
 
-	@media (max-width: 1050px) {
-		.timeline::before {
-			left: calc(12.5rem + var(--timeline-gap) + 0.75rem);
-		}
-
+	@media (max-width: 1120px) {
 		.timeline-summary {
 			grid-template-columns: 12.5rem 1.5rem minmax(0, 1fr) minmax(10rem, 12rem);
 			grid-template-areas:
@@ -425,7 +422,6 @@
 		}
 
 		.timeline-details {
-			padding-left: calc(14rem + var(--timeline-gap) + var(--timeline-gap));
 			grid-template-columns: minmax(0, 1fr);
 			grid-template-areas:
 				'copy'
@@ -439,11 +435,10 @@
 
 		.timeline-entry:not(.is-open) .timeline-details {
 			width: min(13rem, 21vw);
-			padding: 0;
 		}
 	}
 
-	@media (max-width: 680px) {
+	@media (max-width: 860px) {
 		.timeline::before {
 			left: 0.35rem;
 		}
@@ -480,6 +475,7 @@
 			height: 11rem;
 			margin: -0.75rem auto 0.5rem;
 			padding: 0;
+			transform: none;
 		}
 	}
 

@@ -38,7 +38,6 @@
 
   .inventory-card {
     flex: 0 0 13.25rem;
-    width: 13.25rem;
     max-width: 100%;
     padding: clamp(1.25rem, 2vw, 1.65rem);
     color: var(--ink);

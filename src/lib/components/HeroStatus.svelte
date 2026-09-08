@@ -156,8 +156,6 @@
     grid-column: 1 / -1;
     align-self: end;
     width: 100vw;
-    max-width: 100vw;
-    min-width: 0;
     min-height: 4.75rem;
     margin-left: calc(50% - 50vw);
     color: var(--paper-muted);
@@ -193,7 +191,6 @@
   .hero-status-measure,
   .hero-status-track {
     display: flex;
-    align-items: stretch;
     min-height: 4.75rem;
     margin: 0;
   }
@@ -234,7 +231,6 @@
     align-content: center;
     justify-items: start;
     padding-inline: 2.35rem;
-    text-align: left;
     white-space: nowrap;
   }
 

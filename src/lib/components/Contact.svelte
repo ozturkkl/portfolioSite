@@ -354,9 +354,7 @@
     .contact-layout {
       grid-template-columns: 1fr;
     }
-  }
 
-  @media (max-width: 500px) {
     .form-actions {
       flex-direction: column;
       align-items: stretch;

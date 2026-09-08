@@ -35,7 +35,7 @@
     padding-block: 0.8rem;
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 860px) {
     .site-footer {
       justify-items: start;
       grid-template-columns: 1fr;

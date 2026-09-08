@@ -96,7 +96,7 @@ export const copy = {
   },
   links: {
     kicker: 'Links / 005',
-    profileKicker: `FRESH AIR > AIR FRESHENER`,
+    profileKicker: `OTHER PLACES I TURN UP`,
     studioLabel: `A story that will break your heart / Piano`,
     studioVideoUrl: 'https://www.youtube.com/embed/xPM4-vwgMBc?si=BBRh8Z6edg7iDuD3',
     studioVideoTitle: 'Kemal Ozturk performing a piano cover'
@@ -241,15 +241,16 @@ export const experience = [
 export type ExperienceRole = (typeof experience)[number];
 
 export const photoWallItems: PhotoWallContentItem[] = [
-  { ...workstationImage, href: '#links' },
   { ...workImages.descriptRooms, href: '#experience-descript' },
   { ...workImages.squadCastStudio, href: '#experience-squadcast' },
   { ...workImages.peel9Platform, href: '#experience-peel9' },
   { projectName: 'RadioWebApp' },
-  { projectName: 'RGBPiano' },
   { projectName: 'framework-control' },
   { projectName: 'portfolioSite' },
-  { projectName: 'portfolioSitePhotography' }
+  { projectName: 'RGBPiano' },
+  { projectName: 'portfolioSitePhotography' },
+  { ...workstationImage, href: '#links' },
+
 ];
 
 export const skillGroups = [
