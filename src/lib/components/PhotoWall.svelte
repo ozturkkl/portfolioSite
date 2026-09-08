@@ -17,12 +17,14 @@
 		label,
 		ariaLabel,
 		layout = 'grid',
+		collapsed = false,
 		onselect
 	}: {
 		items: PhotoWallItem[];
 		label?: string;
 		ariaLabel?: string;
 		layout?: 'fill' | 'stack' | 'grid';
+		collapsed?: boolean;
 		onselect?: (event: MouseEvent, href: string) => void;
 	} = $props();
 
@@ -54,6 +56,8 @@
 	<section
 		class="photo-wall"
 		data-layout={layout}
+		data-collapsed={collapsed}
+		aria-hidden={collapsed ? 'true' : undefined}
 		aria-labelledby={label ? `${uid}-title` : undefined}
 		aria-label={label ? undefined : ariaLabel}
 	>
@@ -81,10 +85,17 @@
 						{@const inPage = item.href.startsWith('#')}
 						<a
 							href={item.href}
+							tabindex={collapsed ? -1 : undefined}
 							target={inPage ? undefined : '_blank'}
 							rel={inPage ? undefined : 'noreferrer'}
 							aria-label={inPage ? `Jump to ${item.caption}` : `Open ${item.caption}`}
-							onclick={(event) => item.href && onselect?.(event, item.href)}
+							onclick={(event) => {
+								if (collapsed) {
+									event.preventDefault();
+									return;
+								}
+								if (item.href) onselect?.(event, item.href);
+							}}
 						>
 							{@render frame()}
 						</a>
@@ -166,10 +177,13 @@
     --hover-scale: 1.09;
     position: relative;
     z-index: 1;
+    transition: z-index 0s;
+  }
+
+  .photo-wall-item > a,
+  .photo-wall-item > div {
     transform: rotate(var(--angle)) translate(var(--nudge), var(--shift, 0));
-    transition:
-      z-index 0s,
-      transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .photo-wall-item:nth-child(5n + 2) {
@@ -252,6 +266,11 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .photo-wall[data-layout='stack'][data-collapsed='false'],
+  .photo-wall[data-layout='stack'][data-collapsed='false'] .photo-wall-grid {
+    height: auto;
+  }
+
   [data-layout='stack'] .photo-wall-item,
   [data-layout='stack'] .photo-wall-item:nth-child(5n + 2),
   [data-layout='stack'] .photo-wall-item:nth-child(5n + 3),
@@ -308,6 +327,12 @@
   .photo-wall-item:hover,
   .photo-wall-item:focus-within {
     z-index: 5;
+  }
+
+  .photo-wall-item:hover > a,
+  .photo-wall-item:hover > div,
+  .photo-wall-item:focus-within > a,
+  .photo-wall-item:focus-within > div {
     transform: rotate(0) translate(0) scale(var(--hover-scale));
   }
 
@@ -340,6 +365,61 @@
     text-overflow: ellipsis;
     text-transform: uppercase;
     white-space: nowrap;
+  }
+
+  .photo-wall[data-collapsed='true'] {
+    display: block;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .photo-wall[data-collapsed='true'] .photo-wall-grid {
+    position: relative;
+    display: grid;
+    height: 100%;
+    padding: 0;
+    place-items: center;
+  }
+
+  .photo-wall[data-collapsed='true'] .photo-wall-item,
+  .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 2),
+  .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 3),
+  .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 4),
+  .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n) {
+    position: relative;
+    width: min(92%, 12.5rem);
+    grid-area: 1 / 1;
+    --angle: -5deg;
+    --nudge: -4%;
+    --shift: 0;
+    --hover-scale: 1;
+  }
+
+  .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(2) {
+    --angle: 4deg;
+    --nudge: 3%;
+    --shift: 2%;
+  }
+
+  .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(3) {
+    --angle: -1deg;
+    --nudge: 0;
+    --shift: -3%;
+  }
+
+  .photo-wall[data-collapsed='true'] .photo-wall-item a,
+  .photo-wall[data-collapsed='true'] .photo-wall-item div {
+    padding: 0.3rem;
+    box-shadow: 0.4rem 0.45rem 0 rgb(0 0 0 / 25%);
+  }
+
+  .photo-wall[data-collapsed='true'] .photo-wall-item img {
+    height: 7rem;
+    aspect-ratio: auto;
+  }
+
+  .photo-wall[data-collapsed='true'] .photo-wall-caption {
+    display: none;
   }
 
   @media (max-width: 1050px) {
@@ -400,6 +480,20 @@
       --angle: -2.2deg;
       --shift: -0.65rem;
       --nudge: 0.6rem;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .photo-wall[data-collapsed='true'] .photo-wall-item,
+    .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 2),
+    .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 3),
+    .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n + 4),
+    .photo-wall[data-collapsed='true'] .photo-wall-item:nth-child(5n) {
+      width: min(88%, 18rem);
+    }
+
+    .photo-wall[data-collapsed='true'] .photo-wall-item img {
+      height: 9rem;
     }
   }
 </style>

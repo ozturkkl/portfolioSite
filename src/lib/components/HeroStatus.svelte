@@ -117,7 +117,10 @@
 >
 	<div class="hero-status-measure" bind:this={measureEl} aria-hidden="true">
 		{#each heroFacts as fact (fact.label)}
-			<div>{fact.value}</div>
+			<div>
+				<dt>{fact.label}</dt>
+				<dd>{fact.value}</dd>
+			</div>
 		{/each}
 	</div>
 
@@ -131,14 +134,14 @@
 	>
 		{#each heroFacts as fact (fact.label)}
 			<div>
-				<dt class="visually-hidden">{fact.label}</dt>
+				<dt>{fact.label}</dt>
 				<dd>{fact.value}</dd>
 			</div>
 		{/each}
 		{#if marquee}
 			{#each heroFacts as fact (`dup-${fact.label}`)}
 				<div aria-hidden="true">
-					<dt class="visually-hidden">{fact.label}</dt>
+					<dt>{fact.label}</dt>
 					<dd>{fact.value}</dd>
 				</div>
 			{/each}
@@ -227,9 +230,11 @@
     position: relative;
     display: grid;
     flex: 0 0 auto;
-    place-items: center;
+    gap: 0.22rem;
+    align-content: center;
+    justify-items: start;
     padding-inline: 2.35rem;
-    text-align: center;
+    text-align: left;
     white-space: nowrap;
   }
 
@@ -239,15 +244,22 @@
     position: absolute;
     top: 50%;
     right: 0;
-    width: 1.1em;
-    color: var(--signal);
-    line-height: 1;
-    text-align: center;
-    content: "×";
+    width: 0.28rem;
+    height: 0.28rem;
+    border-radius: 50%;
+    background: var(--signal);
+    content: "";
     transform: translate(50%, -50%);
   }
 
+  .hero-status dt,
   .hero-status dd {
     margin: 0;
+  }
+
+  .hero-status dt {
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+    opacity: 0.58;
   }
 </style>

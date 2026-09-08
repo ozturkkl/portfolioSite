@@ -20,11 +20,11 @@ export const site = {
 };
 
 export const heroTypingLines = [
-  'software engineer',
+  'huge nerd riding on the edge of awkward',
   'open-source maintainer',
-  'Linux tinkerer',
   'pianist, artist, tea addict',
-  'mancho\'s (my cat) direct report'
+  'Linux enjoyer, I use Nix BTW',
+  'Mancho\'s (my cat) direct report'
 ];
 
 export const heroFacts = [
@@ -39,7 +39,7 @@ export const copy = {
   hero: {
     kicker: 'Intro / 001',
     intro:
-      'I like building useful things and sweating the details: from remote recording tools at Descript, to a system service that controls my laptop fans. Oh, and I also make my piano lights up when I play. Welcome, and thanks for checking out my portfolio!',
+      'I like building useful things and sweating the details: from remote recording tools at Descript, to a system service that controls my laptop fans. Oh, and I also make my piano light up when I play. Welcome, and thanks for checking out my portfolio!',
     terminalPrompt: 'kemal@workstation:~$ whoami',
     photoWallLabel: 'BUILT, SHIPPED & TINKERED WITH / PICK A FRAME'
   },
@@ -68,7 +68,7 @@ export const copy = {
     kicker: 'Links / 005',
     profileKicker: 'Profile / Personal',
     studioLabel: 'Off the clock / Piano',
-    studioVideoUrl: 'https://www.youtube.com/embed/b2C7c3MK9wY',
+    studioVideoUrl: 'https://www.youtube.com/embed/xPM4-vwgMBc?si=BBRh8Z6edg7iDuD3',
     studioVideoTitle: 'Kemal Ozturk performing a piano cover'
   },
   contact: {
@@ -207,6 +207,8 @@ export const experience = [
     images: [workImages.peel9Platform]
   }
 ];
+
+export type ExperienceRole = (typeof experience)[number];
 
 export const photoWallItems: PhotoWallContentItem[] = [
   { ...workstationImage, href: '#links' },

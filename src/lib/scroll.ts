@@ -74,6 +74,11 @@ function targetY(hash: string) {
 
 	const el = document.getElementById(decodeURIComponent(hash.slice(1)));
 	if (!el) return window.scrollY;
+	if (el instanceof HTMLDetailsElement) el.open = true;
+	if (el.matches('[data-disclosure]')) {
+		const button = el.querySelector('button[aria-expanded="false"]');
+		if (button instanceof HTMLButtonElement) button.click();
+	}
 
 	const landmark =
 		el.classList.contains('section') || el.classList.contains('hero')
