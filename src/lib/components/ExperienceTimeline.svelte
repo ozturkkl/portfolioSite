@@ -235,7 +235,7 @@
 
 	.timeline-heading h3 {
 		font-family: var(--serif);
-		font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+		font-size: 2.35rem;
 		font-weight: 400;
 		letter-spacing: -0.035em;
 	}
@@ -439,6 +439,14 @@
 	}
 
 	@media (max-width: 860px) {
+		.timeline-heading h3 {
+			font-size: 1.6rem;
+		}
+
+		.timeline-summary-copy {
+			font-size: 0.98rem;
+		}
+
 		.timeline::before {
 			left: 0.35rem;
 		}

@@ -131,7 +131,7 @@
     flex: 1 1 8rem;
     min-width: min(100%, 8rem);
     font-family: var(--serif);
-    font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+    font-size: 2.35rem;
     font-weight: 400;
     letter-spacing: -0.035em;
   }
@@ -235,6 +235,14 @@
   }
 
   @media (max-width: 860px) {
+    .entry h3 {
+      font-size: 1.6rem;
+    }
+
+    .entry-summary {
+      font-size: 0.98rem;
+    }
+
     .entry.has-media {
       grid-template-columns: minmax(0, 1fr);
       grid-template-areas:

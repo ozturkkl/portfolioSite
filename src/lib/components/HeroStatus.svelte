@@ -215,7 +215,6 @@
 
   .hero-status.is-marquee .hero-status-track {
     cursor: grab;
-    touch-action: pan-x;
   }
 
   .hero-status.is-dragging .hero-status-track {

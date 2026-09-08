@@ -7,6 +7,10 @@
 	import SectionHeader from './SectionHeader.svelte';
 
 	let visibleProjects = $derived(appState.showAllProjects ? projects : projects.slice(0, 4));
+
+	function getProjectChips(language: string | null, topics: string[]) {
+		return [...new Set([language, ...topics].filter((chip) => chip != null).map((chip) => chip.toLowerCase()))];
+	}
 </script>
 
 <section id="projects" class="section" aria-labelledby="projects-title">
@@ -37,7 +41,7 @@
 								href: liveUrl || project.url
 							}
 						]}
-				chips={[project.language, ...project.topics].filter((chip) => chip != null)}
+				chips={getProjectChips(project.language, project.topics)}
 				chipsLabel={`${projectTitle} technologies`}
 			>
 				{#snippet meta()}

@@ -229,9 +229,7 @@
   }
 
   .terminal-response {
-    display: flex;
-    align-items: center;
-    min-height: 1.55em;
+    min-height: 3.2em;
     margin-top: 0.2rem;
     color: var(--mint);
   }
@@ -243,10 +241,12 @@
   }
 
   .terminal-cursor {
+    display: inline-block;
     width: 0.48em;
     height: 1.05em;
     margin-left: 0.22rem;
     background: currentcolor;
+    vertical-align: -0.12em;
     animation: terminal-blink 900ms steps(1, end) infinite;
   }
 
@@ -308,8 +308,18 @@
   }
 
   @media (max-width: 860px) {
+    .hero {
+      padding-bottom: 0;
+    }
+
     .hero h1 {
-      font-size: 3.5rem;
+      margin-top: 1rem;
+      font-size: 3.2rem;
+    }
+
+    .hero-summary {
+      font-size: 0.94rem;
+      line-height: 1.6;
     }
   }
 
