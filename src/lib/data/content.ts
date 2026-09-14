@@ -77,7 +77,7 @@ export const copy = {
     kicker: 'Experience / 002',
     title: 'I build software, but you already know that',
     intro:
-      'Seven years designing, shipping, and operating software across web, desktop, and backend services. I lead projects from technical design through rollout, I love what I build, and build what I love.'
+      'Seven years designing, shipping, and operating software across web, desktop, and backend services. I lead projects from technical design through rollout. I love what I build, and build what I love.'
   },
   projects: {
     kicker: 'Projects / 003',
@@ -91,7 +91,7 @@ export const copy = {
     kicker: 'Toolkit / 004',
     title: `You've read this far? I'm impressed. Unless you're a bot that is`,
     intro:
-      `A good tool is an underrated blessing, you only notice it's worth in it's absence. Once in a while you discover a new tool and the excitement of learing is re-kindled, there's no better feeling.`,
+      `A good tool is an underrated blessing; you only notice its worth in its absence. Once in a while, you discover a new tool and the excitement of learning is rekindled. There's no better feeling.`,
     labPrefix: 'KIT'
   },
   links: {
@@ -183,12 +183,16 @@ export const experience = [
     summary:
       `Led projects across Descript's web, desktop, API, and recording platforms, from technical design and implementation through rollout and production operations.`,
     highlights: [
-      'Led Scheduled Rooms from architecture RFC and phased implementation through full rollout, coordinating changes across APIs, permissions, and recording clients. Adoption reached 500+ weekly creations and roughly 25% of Rooms recordings.',
-      'Designed invite-scoped authorization with server-enforced permissions, project-scoped credentials, and isolated sessions, enabling guests to record without project membership. Coordinated security review and staged releases, including hostless recording to general availability.',
-      'Architected the initial Web Recorder engine in TypeScript with Redux-Saga orchestration, separating capture logic from the UI. Reused across Editor, Media Library, Quick Recorder, and Rooms for multi-track camera capture at 4K/30 FPS, microphone, screen, system audio, and device switching.',
-      'Delivered instant playback so users could review takes while recording chunks were still uploading. Built a Web Worker upload manager with progressive uploads and progress-aware timeouts; resolved asynchronous queue races and implemented in-call message serialization and coalescing.',
-      'Shipped recording visualization, cancel/restart, and pre-roll/live playback; improved A/V synchronization from approximately 700 ms to 50 ms. Built an internal RNNoise-backed WebAssembly denoise prototype and profiled capture performance to improve frame rate and bitrate.',
-      'Owned production incident response and recording recovery across web and desktop. Built analytics dashboards, alerts, memory telemetry, deployment safeguards, and Support diagnostics; investigated device failures, authorization errors, and rate-limit issues.'
+      'Architected the Web Recorder engine with Redux-Saga as a reusable TypeScript package. Editor, Media Library, Quick Recorder, and Rooms were built on top of the engine. It supported multi-track recording and device switching. Inputs included 4K/30 FPS camera video, microphone and system audio, and screen capture.',
+      'Led Scheduled Rooms from technical design through phased rollout, coordinating work across APIs, permissions, and recording clients. The feature reached 500+ creations per week and roughly 25% of Rooms recordings.',
+      "Designed guest access for Scheduled Rooms so invitees could record without joining or accessing the host's project. Enforced tightly scoped permissions on the server. Coordinated the security review and staged rollout to general availability.",
+      'Built a Web Worker upload manager with upload chunking and progress-aware timeouts. Fixed an asynchronous race in the segment counter logic to improve upload reliability.',
+      'Owned and shipped recording-script visualization, recording cancel and restart, and pre-roll/live playback.',
+      'Added an internal denoise audio effect using an RNNoise-backed WebAssembly package.',
+      'Reduced the drift between audio and screen video capture from about 700 ms to 50 ms by profiling capture timings and adding delay-compensation logic.',
+      'Led response to recording failures across web and desktop. Investigated recovery paths, device failures, authorization errors, and rate limits.',
+      'Built dashboards, alerts, browser-memory telemetry, preflight deployment checks, and tools that helped Support diagnose recording failures.',
+      'Volunteered as the engineering contact for an at-risk enterprise trial. Shipped 2 fixes and joined a customer meeting with Product, Support, and Marketing. The customer converted after the team addressed nearly all concerns.'
     ],
     website: 'https://www.descript.com',
     tools: [
@@ -214,12 +218,14 @@ export const experience = [
     summary:
       'Built a remote-recording product through its acquisition by Descript, working across capture, product UI, cloud services, performance, and developer tooling.',
     highlights: [
-      'Built core remote-recording product features using Angular, TypeScript, Next.js, Firebase, and GCP, spanning capture, authentication, account lifecycle, third-party integrations, and onboarding. Migrated selected microservices to serverless cloud functions to reduce costs and support scaling.',
-      'Designed and delivered Canvas and SquadShots features, app-wide dark mode, mobile-first layouts, and accessibility improvements. Profiled CPU usage and fixed memory leaks across Studio, Chat, Dashboard, and audio metering.',
-      'Created Nx executors and generators that reduced feature scaffolding time from 30 minutes to 5, standardizing setup for new features.'
+      'Built remote-recording features in Angular, TypeScript, Next.js, Firebase, and GCP across capture, authentication, account management, third-party integrations, and onboarding.',
+      'Migrated selected microservices to serverless cloud functions to reduce costs and support scaling.',
+      'Designed and shipped Canvas and SquadShots. Added app-wide dark mode, mobile-first layouts, and accessibility improvements.',
+      'Profiled CPU use and fixed memory leaks across Studio, Chat, Dashboard, and audio metering.',
+      'Cut new-feature scaffolding time from 30 minutes to 5 by building Nx executors and generators that standardized setup.'
     ],
     website: 'https://squadcast.fm',
-    tools: ['Angular', 'RxJS', 'Tailwind', 'TypeScript', 'Next.js', 'Firebase', 'GCP', 'Nx', 'GitHub CI', 'Google Cloud Functions'],
+    tools: ['Angular', 'RxJS', 'Tailwind', 'TypeScript', 'Next.js', 'Firebase', 'GCP', 'Nx', 'GitHub Actions', 'Google Cloud Functions'],
     images: [workImages.squadCastApp, workImages.squadCastStudio]
   },
   {
@@ -230,7 +236,8 @@ export const experience = [
       'Built records-management and analytics software for police departments on a small product team.',
     highlights: [
       'Delivered records-management features used by 10+ police departments around Cincinnati, including incident approval, traffic-crash diagrams, modular forms, and account recovery, using Node.js, Express, and Handlebars.',
-      'Led code reviews and mentored junior engineers; maintained the GitHub repository and built a Leaflet plugin for dynamic crash-map markers.'
+      'Led code reviews, mentored new hires, and maintained the GitHub repository.',
+      'Built a Leaflet plugin for dynamic crash-map markers.'
     ],
     website: 'https://www.peel9.com',
     tools: ['Node.js', 'Express', 'Handlebars', 'Leaflet'],
@@ -269,6 +276,10 @@ export const skillGroups = [
       'Next.js',
       'Node.js',
       'Redux-Saga',
+      'HTML',
+      'CSS/SCSS',
+      'Tailwind',
+      'Figma',
       'Vite',
       'Nx',
       'Turborepo'
@@ -281,11 +292,15 @@ export const skillGroups = [
   {
     label: 'Platform',
     skills: [
+      'REST APIs',
+      'Postgres',
       'Temporal',
       'GCP',
       'AWS',
+      'S3',
       'Firebase',
       'Sentry',
+      'Grafana',
       'LaunchDarkly',
       'Cloudflare',
       'Retool'
@@ -293,7 +308,7 @@ export const skillGroups = [
   },
   {
     label: 'Systems',
-    skills: ['Rust', 'Tokio', 'Poem', 'OpenAPI', 'Python', 'C/C++', 'Nix/NixOS', 'GitHub CI']
+    skills: ['Rust', 'Tokio', 'Poem/OpenAPI', 'Python', 'C', 'C++', 'Linux', 'Nix/NixOS', 'Arch Linux', 'GitHub Actions']
   }
 ];
 
