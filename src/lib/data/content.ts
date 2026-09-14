@@ -20,11 +20,11 @@ export const site = {
 };
 
 export const heroTypingLines = [
-  'huge nerd riding on the edge of awkward',
+  'curious by nature, nerdy by choice',
   'open-source maintainer',
   'pianist, artist, loving husband, tea addict',
   'Linux enjoyer, I use Nix BTW',
-  'Mancho\'s (my cat) direct report'
+  `Mancho's (my cat's) direct report`
 ];
 
 export const heroFacts = [
@@ -83,7 +83,7 @@ export const copy = {
     kicker: 'Projects / 003',
     title: 'The same craft, after hours, with care, and you guessed it, tea...',
     intro:
-      'I don\'t "vibe code", tech debt is a killer for someone like me keeping many side projects alive. Quality is not an optional argument (pun intended).',
+      `AI is part of my daily toolkit, but I still own the architecture, the tradeoffs, and the tech debt. With this many side projects to keep alive, quality is not an optional argument (pun intended).`,
     defaultEyebrow: 'Public repository',
     fallbackDescription: 'Details are being documented.'
   },
