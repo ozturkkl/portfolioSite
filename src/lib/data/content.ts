@@ -360,12 +360,6 @@ export const links = [
     url: 'https://steamcommunity.com/id/kemal_ozt/',
     description: 'For the occasional game and a break from building.',
     icon: '/images/links/Steam.webp'
-  },
-  {
-    title: 'Instagram',
-    url: 'https://www.instagram.com/kemal.ozt/',
-    description: 'A quieter feed, but messages are welcome.',
-    icon: '/images/links/Instagram.svg'
   }
 ];
 
