@@ -165,7 +165,7 @@ const workImages = {
   },
   squadCastStudio: {
     src: '/images/experience/squadcast-studio.webp',
-    alt: 'SquadCast recording studio shown across desktop, tablet, and phone',
+    alt: 'SquadCast recording session with four participants on desktop and phone',
     caption: 'SquadCast Studio'
   },
   peel9Platform: {
@@ -320,7 +320,7 @@ export const linksQuote = {
 export const artworks: ContentImage[] = [
   workstationImage,
   {
-    src: '/art/piano.jpg',
+    src: '/art/piano.webp',
     alt: 'Photograph of two miniature grand pianos sitting on a piano',
     caption: 'Piano'
   },

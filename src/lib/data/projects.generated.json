@@ -23,10 +23,10 @@
       "tokio",
       "typescript"
     ],
-    "stars": 222,
-    "forks": 7,
-    "pushedAt": "2026-09-07T04:11:50Z",
-    "image": "https://github.com/user-attachments/assets/69c5afe0-f316-4c62-933b-98d07fea8ee0"
+    "stars": 251,
+    "forks": 9,
+    "pushedAt": "2026-10-10T08:36:50Z",
+    "image": "https://github.com/user-attachments/assets/61fe424b-1c2b-4897-987a-28042721726d"
   },
   {
     "id": 910287616,
@@ -49,7 +49,7 @@
     ],
     "stars": 2,
     "forks": 1,
-    "pushedAt": "2026-09-07T04:21:36Z",
+    "pushedAt": "2026-10-09T18:31:39Z",
     "image": "https://raw.githubusercontent.com/ozturkkl/RadioWebApp/main/demo/combined.png"
   },
   {
@@ -77,23 +77,28 @@
     "image": "https://raw.githubusercontent.com/ozturkkl/RGBPiano/main/demo/combined.jpg"
   },
   {
-    "id": 402460913,
-    "name": "NowPlaying.js",
-    "url": "https://github.com/ozturkkl/NowPlaying.js",
-    "homepage": null,
-    "description": "An OBS browser-source overlay that shows the track currently playing on a radio stream. It polls a JSON now-playing endpoint for artist, title, and cover art, scales from one config file, and marquee-scrolls text that does not fit. Built for live video overlays, with a green-screen background option for chroma key.",
-    "language": "HTML",
+    "id": 1265669895,
+    "name": "portfolioSitePhotography",
+    "url": "https://github.com/ozturkkl/portfolioSitePhotography",
+    "homepage": "https://ilaydaturkmen.com/",
+    "description": "A static photography portfolio. Galleries come from a Nextcloud share, get resized at sync time, then ship as a prerendered SvelteKit site. Lightbox with progressive full-resolution images and video, category grids, session pricing, and a contact form. GitHub Pages with a daily photo sync.",
+    "language": "Svelte",
     "topics": [
-      "javascript",
-      "livestream",
-      "obs",
-      "overlay",
-      "radio"
+      "gallery",
+      "github-pages",
+      "lightbox",
+      "photography",
+      "portfolio",
+      "sharp",
+      "sveltekit",
+      "tailwindcss",
+      "typescript",
+      "vite"
     ],
     "stars": 0,
     "forks": 0,
-    "pushedAt": "2026-09-07T03:56:27Z",
-    "image": "https://raw.githubusercontent.com/ozturkkl/NowPlaying.js/main/example.png"
+    "pushedAt": "2026-10-10T12:08:58Z",
+    "image": "https://github.com/user-attachments/assets/316ed5f2-99b7-4bcc-be72-4c679b60b8fc"
   },
   {
     "id": 891812162,
@@ -117,7 +122,7 @@
     ],
     "stars": 0,
     "forks": 0,
-    "pushedAt": "2026-09-07T02:34:24Z",
+    "pushedAt": "2026-10-05T05:00:06Z",
     "image": null
   },
   {
@@ -126,7 +131,7 @@
     "url": "https://github.com/ozturkkl/portfolioSite",
     "homepage": "http://kozturk.com/",
     "description": "A Svelte 5 single-page portfolio for Kemal Ozturk. Public GitHub repos are snapshotted at build time (README images, topics, descriptions); experience ships with product galleries; contact, resume, and links sit on the same page. Custom CSS around an Ink & Signal palette. Live at kozturk.com.",
-    "language": "CSS",
+    "language": "Svelte",
     "topics": [
       "css",
       "github-actions",
@@ -139,33 +144,26 @@
     ],
     "stars": 0,
     "forks": 0,
-    "pushedAt": "2026-09-07T02:24:59Z",
-    "image": "https://user-images.githubusercontent.com/51798197/132264772-2a1af4ec-0cf7-4091-8ac2-c9f52f615220.png"
+    "pushedAt": "2026-09-25T02:19:48Z",
+    "image": "https://raw.githubusercontent.com/ozturkkl/portfolioSite/master/demo/hero.png"
   },
   {
-    "id": 1265669895,
-    "name": "portfolioSitePhotography",
-    "url": "https://github.com/ozturkkl/portfolioSitePhotography",
-    "homepage": "https://ilaydaturkmen.com/",
-    "description": "A static photography portfolio. Galleries come from a Nextcloud share, get resized at sync time, then ship as a prerendered SvelteKit site. Lightbox with progressive full-resolution images and video, category grids, session pricing, and a contact form. GitHub Pages with a daily photo sync.",
-    "language": "Svelte",
+    "id": 402460913,
+    "name": "NowPlaying.js",
+    "url": "https://github.com/ozturkkl/NowPlaying.js",
+    "homepage": null,
+    "description": "An OBS browser-source overlay that shows the track currently playing on a radio stream. It polls a JSON now-playing endpoint for artist, title, and cover art, scales from one config file, and marquee-scrolls text that does not fit. Built for live video overlays, with a green-screen background option for chroma key.",
+    "language": "HTML",
     "topics": [
-      "gallery",
-      "github-pages",
-      "lightbox",
-      "nextcloud",
-      "photography",
-      "portfolio",
-      "sharp",
-      "svelte",
-      "sveltekit",
-      "tailwindcss",
-      "typescript",
-      "vite"
+      "javascript",
+      "livestream",
+      "obs",
+      "overlay",
+      "radio"
     ],
     "stars": 0,
     "forks": 0,
-    "pushedAt": "2026-09-07T02:08:14Z",
-    "image": "https://github.com/user-attachments/assets/316ed5f2-99b7-4bcc-be72-4c679b60b8fc"
+    "pushedAt": "2026-09-07T03:56:27Z",
+    "image": "https://raw.githubusercontent.com/ozturkkl/NowPlaying.js/main/example.png"
   }
 ]

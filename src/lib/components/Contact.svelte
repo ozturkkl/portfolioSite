@@ -31,7 +31,7 @@
 		}
 	}
 
-	const draft = typeof localStorage !== 'undefined' ? loadDraft() : null;
+	const draft = loadDraft();
 
 	let name = $state(draft?.name ?? '');
 	let email = $state(draft?.email ?? '');
@@ -39,18 +39,27 @@
 	let submitted = $state(false);
 	let submitting = $state(false);
 	let submitError = $state('');
+	let botcheck = $state(false);
 	let emailCopied = $state(false);
 	let emailCopiedTimer = 0;
+
+	function writeDraft(value: string | null) {
+		// Storage can throw (private mode, quota, blocked); drafts are best-effort.
+		try {
+			if (value === null) localStorage.removeItem(draftKey);
+			else localStorage.setItem(draftKey, value);
+		} catch {}
+	}
 
 	function persistDraft() {
 		if (submitted) return;
 
 		if (!name && !email && !message) {
-			localStorage.removeItem(draftKey);
+			writeDraft(null);
 			return;
 		}
 
-		localStorage.setItem(draftKey, JSON.stringify({ name, email, message }));
+		writeDraft(JSON.stringify({ name, email, message }));
 	}
 
 	async function copyEmail() {
@@ -76,6 +85,11 @@
 			return;
 		}
 
+		if (botcheck) {
+			submitted = true;
+			return;
+		}
+
 		submitting = true;
 
 		try {
@@ -83,12 +97,11 @@
 				name,
 				email,
 				message,
-				botcheck: '',
 				subject: `Portfolio contact from ${name}`,
 				from_name: `${profile.name} Portfolio`
 			};
 
-			await Promise.all(
+			const results = await Promise.allSettled(
 				accessKeys.map(async (accessKey) => {
 					const response = await fetch('https://api.web3forms.com/submit', {
 						method: 'POST',
@@ -103,13 +116,20 @@
 				})
 			);
 
-			localStorage.removeItem(draftKey);
-			submitted = true;
-		} catch {
-			submitError = copy.contact.errors.sendFailed;
+			for (const result of results) {
+				if (result.status === 'rejected') console.error('Contact delivery failed', result.reason);
+			}
+
+			if (!results.some((result) => result.status === 'fulfilled')) {
+				submitError = copy.contact.errors.sendFailed;
+				return;
+			}
 		} finally {
 			submitting = false;
 		}
+
+		writeDraft(null);
+		submitted = true;
 	}
 </script>
 
@@ -134,6 +154,7 @@
 					class="visually-hidden"
 					type="checkbox"
 					name="botcheck"
+					bind:checked={botcheck}
 					tabindex="-1"
 					autocomplete="off"
 					aria-hidden="true"

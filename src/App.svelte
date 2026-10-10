@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import Contact from './lib/components/Contact.svelte';
 	import Experience from './lib/components/Experience.svelte';
 	import Hero from './lib/components/Hero.svelte';
@@ -8,6 +8,7 @@
 	import SiteFooter from './lib/components/SiteFooter.svelte';
 	import SiteHeader from './lib/components/SiteHeader.svelte';
 	import Toolkit from './lib/components/Toolkit.svelte';
+	import { appState } from './lib/appState.svelte';
 	import {
 		cancelProgrammaticScroll,
 		onAnchorClick,
@@ -15,9 +16,23 @@
 		syncInitialAnchor
 	} from './lib/scroll';
 
-	onMount(() => {
+	async function revealHiddenProject() {
+		const id = decodeURIComponent(location.hash.slice(1));
+		if (!id.startsWith('project-') || document.getElementById(id)) return;
+
+		appState.showAllProjects = true;
+		await tick();
+	}
+
+	onMount(async () => {
+		await revealHiddenProject();
 		syncInitialAnchor();
 	});
+
+	async function handlePopState() {
+		await revealHiddenProject();
+		onPopState();
+	}
 
 	function handlePointerMove(event: PointerEvent) {
 		const shell = event.currentTarget as HTMLElement;
@@ -30,7 +45,7 @@
 
 <svelte:document onclick={onAnchorClick} />
 <svelte:window
-	onpopstate={onPopState}
+	onpopstate={handlePopState}
 	onwheel={cancelProgrammaticScroll}
 	ontouchmove={cancelProgrammaticScroll}
 />

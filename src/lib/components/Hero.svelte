@@ -91,10 +91,8 @@
 		</p>
 		<div class="hero-copy">
 			<h1 id="hero-title">{profile.title}</h1>
-			<div
-				class="terminal-intro"
-				aria-label={`Kemal is a ${heroTypingLines.join(', ')}`}
-			>
+			<div class="terminal-intro">
+				<p class="visually-hidden">{`Kemal is a ${heroTypingLines.join(', ')}`}</p>
 				<p class="terminal-command" aria-hidden="true">{copy.hero.terminalPrompt}</p>
 				<p class="terminal-response" aria-hidden="true">
 					<span>{typedText}</span><span class="terminal-cursor"></span>

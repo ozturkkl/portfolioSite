@@ -1,6 +1,6 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig, type Plugin } from 'vite';
-import { links, profile, site } from './src/lib/data/content';
+import { links, profile, site } from './src/lib/data/content.ts';
 
 function escapeAttr(value: string) {
   return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');

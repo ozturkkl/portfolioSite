@@ -2,13 +2,25 @@
 	import { profile, resumeUrl } from '../data/content';
 
 	let menuOpen = $state(false);
+	let header: HTMLElement;
 
 	function closeMenu() {
 		menuOpen = false;
 	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key === 'Escape') closeMenu();
+	}
+
+	function handleDocumentClick(event: MouseEvent) {
+		if (!header.contains(event.target as Node)) closeMenu();
+	}
 </script>
 
-<header class="site-header">
+<svelte:window onkeydown={handleKeydown} />
+<svelte:document onclick={handleDocumentClick} />
+
+<header class="site-header" bind:this={header}>
 	<a class="wordmark" href="#top" onclick={closeMenu} aria-label="{profile.name}, home">
 		<img src="/favicon.svg?v=3" alt="" width="20" height="20" />
 		<span class="wordmark-prompt">
