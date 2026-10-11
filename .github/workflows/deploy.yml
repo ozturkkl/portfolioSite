@@ -3,6 +3,9 @@ name: Deploy portfolio
 on:
   push:
     branches: [master]
+  # Daily rebuild refreshes the GitHub project snapshot.
+  schedule:
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
