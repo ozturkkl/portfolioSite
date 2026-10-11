@@ -1,133 +1,145 @@
 <script lang="ts">
-	import { tick } from 'svelte';
-	import { MediaQuery } from 'svelte/reactivity';
-	import {
-		copy,
-		heroTypingLines,
-		photoWallItems,
-		profile
-	} from '../data/content';
-	import projects from '../data/projects.generated.json';
-	import { formatRepositoryName } from '../format';
-	import { scrollToAnchor } from '../scroll';
-	import { appState } from '../appState.svelte';
-	import HeroStatus from './HeroStatus.svelte';
-	import PhotoWall from './PhotoWall.svelte';
+  import { tick } from "svelte";
+  import { MediaQuery } from "svelte/reactivity";
+  import {
+    copy,
+    heroTypingLines,
+    photoWallItems,
+    profile,
+  } from "../data/content";
+  import projects from "../data/projects.generated.json";
+  import { formatRepositoryName } from "../format";
+  import { scrollToAnchor } from "../scroll";
+  import { appState } from "../appState.svelte";
+  import HeroStatus from "./HeroStatus.svelte";
+  import PhotoWall from "./PhotoWall.svelte";
 
-	const reducedMotion = new MediaQuery('prefers-reduced-motion: reduce');
-	const typeSpeedMs = 40;
-	const deleteSpeedMs = 10;
-	const phraseHoldMs = 1450;
+  const reducedMotion = new MediaQuery("prefers-reduced-motion: reduce");
+  const typeSpeedMs = 40;
+  const deleteSpeedMs = 10;
+  const phraseHoldMs = 1450;
 
-	let typedText = $state('');
-	let typingLineIndex = $state(0);
-	let deleting = $state(false);
+  let typedText = $state("");
+  let typingLineIndex = $state(0);
+  let deleting = $state(false);
 
-	$effect(() => {
-		const line = heroTypingLines[typingLineIndex] ?? '';
-		if (reducedMotion.current) {
-			typedText = heroTypingLines[0] ?? '';
-			return;
-		}
+  $effect(() => {
+    const line = heroTypingLines[typingLineIndex] ?? "";
+    if (reducedMotion.current) {
+      typedText = heroTypingLines[0] ?? "";
+      return;
+    }
 
-		let delay = deleting ? deleteSpeedMs : typeSpeedMs;
-		if (!deleting && typedText === line) delay = phraseHoldMs;
-		if (deleting && typedText === '') delay = 260;
+    let delay = deleting ? deleteSpeedMs : typeSpeedMs;
+    if (!deleting && typedText === line) delay = phraseHoldMs;
+    if (deleting && typedText === "") delay = 260;
 
-		const timer = setTimeout(() => {
-			if (!deleting && typedText === line) {
-				deleting = true;
-				return;
-			}
-			if (deleting && typedText === '') {
-				typingLineIndex = (typingLineIndex + 1) % heroTypingLines.length;
-				deleting = false;
-				return;
-			}
+    const timer = setTimeout(() => {
+      if (!deleting && typedText === line) {
+        deleting = true;
+        return;
+      }
+      if (deleting && typedText === "") {
+        typingLineIndex = (typingLineIndex + 1) % heroTypingLines.length;
+        deleting = false;
+        return;
+      }
 
-			const nextLength = typedText.length + (deleting ? -1 : 1);
-			typedText = line.slice(0, nextLength);
-		}, delay);
+      const nextLength = typedText.length + (deleting ? -1 : 1);
+      typedText = line.slice(0, nextLength);
+    }, delay);
 
-		return () => clearTimeout(timer);
-	});
+    return () => clearTimeout(timer);
+  });
 
-	let photoWall = $derived(
-		photoWallItems.flatMap((item) => {
-			if (!('projectName' in item)) return [item];
+  let photoWall = $derived(
+    photoWallItems.flatMap((item) => {
+      if (!("projectName" in item)) return [item];
 
-			const project = projects.find((candidate) => candidate.name === item.projectName);
+      const project = projects.find(
+        (candidate) => candidate.name === item.projectName,
+      );
 
-			return project?.image == null
-				? []
-				: [
-						{
-							src: project.image,
-							alt: `README preview from the ${formatRepositoryName(project.name)} repository`,
-							caption: formatRepositoryName(project.name),
-							href: `#project-${project.name}`
-						}
-					];
-		})
-	);
+      return project?.image == null
+        ? []
+        : [
+            {
+              src: project.image,
+              alt: `README preview from the ${formatRepositoryName(project.name)} repository`,
+              caption: formatRepositoryName(project.name),
+              href: `#project-${project.name}`,
+            },
+          ];
+    }),
+  );
 
-	async function revealProjectCard(event: MouseEvent, href: string) {
-		if (!href.startsWith('#project-') || document.getElementById(href.slice(1))) {
-			return;
-		}
+  async function revealProjectCard(event: MouseEvent, href: string) {
+    if (
+      !href.startsWith("#project-") ||
+      document.getElementById(href.slice(1))
+    ) {
+      return;
+    }
 
-		event.preventDefault();
-		appState.showAllProjects = true;
-		await tick();
-		scrollToAnchor(href);
-	}
+    event.preventDefault();
+    appState.showAllProjects = true;
+    await tick();
+    scrollToAnchor(href);
+  }
 </script>
 
 <section id="top" class="hero" aria-labelledby="hero-title">
-	<div class="hero-primary">
-		<p class="hero-kicker">
-			<span>{copy.hero.kicker}</span>
-			<span>{profile.location}</span>
-		</p>
-		<div class="hero-copy">
-			<h1 id="hero-title">{profile.title}</h1>
-			<div class="terminal-intro">
-				<p class="visually-hidden">{`Kemal is a ${heroTypingLines.join(', ')}`}</p>
-				<p class="terminal-command" aria-hidden="true">{copy.hero.terminalPrompt}</p>
-				<p class="terminal-response" aria-hidden="true">
-					<span>{typedText}</span><span class="terminal-cursor"></span>
-				</p>
-			</div>
-			<div class="hero-summary">
-				{#each copy.hero.intro as paragraph}
-					<p>
-						{#each paragraph as segment}
-							{#if segment.href}
-								<a href={segment.href} style:color={segment.color}>{segment.text}</a>
-							{:else}
-								<span style:color={segment.color}>{segment.text}</span>
-							{/if}
-						{/each}
-					</p>
-				{/each}
-			</div>
-			<div class="hero-actions">
-				<a class="button-link primary" href="#experience">My experience</a>
-				<a class="button-link secondary" href="#projects">See what I’ve built</a>
-			</div>
-		</div>
-	</div>
+  <div class="hero-primary">
+    <p class="hero-kicker">
+      <span>{copy.hero.kicker}</span>
+      <span>{profile.location}</span>
+    </p>
+    <div class="hero-copy">
+      <h1 id="hero-title">{profile.title}</h1>
+      <div class="terminal-intro">
+        <p class="visually-hidden">
+          {`Kemal is a ${heroTypingLines.join(", ")}`}
+        </p>
+        <p class="terminal-command" aria-hidden="true">
+          {copy.hero.terminalPrompt}
+        </p>
+        <p class="terminal-response" aria-hidden="true">
+          <span>{typedText}</span><span class="terminal-cursor"></span>
+        </p>
+      </div>
+      <div class="hero-summary">
+        {#each copy.hero.intro as paragraph}
+          <p>
+            {#each paragraph as segment}
+              {#if segment.href}
+                <a href={segment.href} style:color={segment.color}
+                  >{segment.text}</a
+                >
+              {:else}
+                <span style:color={segment.color}>{segment.text}</span>
+              {/if}
+            {/each}
+          </p>
+        {/each}
+      </div>
+      <div class="hero-actions">
+        <a class="button-link primary" href="#experience">My experience</a>
+        <a class="button-link secondary" href="#projects">See what I’ve built</a
+        >
+      </div>
+    </div>
+  </div>
 
-	<div class="hero-wall">
-		<PhotoWall
-			layout="fill"
-			label={copy.hero.photoWallLabel}
-			items={photoWall}
-			onselect={revealProjectCard}
-		/>
-	</div>
+  <div class="hero-wall">
+    <PhotoWall
+      layout="fill"
+      label={copy.hero.photoWallLabel}
+      items={photoWall}
+      onselect={revealProjectCard}
+    />
+  </div>
 
-	<HeroStatus />
+  <HeroStatus />
 </section>
 
 <style>
@@ -139,7 +151,7 @@
     padding: calc(var(--header-height) + var(--anchor-gap)) 0 2rem;
     grid-template-columns: 28rem minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) auto;
-    column-gap: 1rem;
+    column-gap: 3rem;
     row-gap: 0.65rem;
   }
 
@@ -154,7 +166,6 @@
     display: grid;
     min-width: 0;
     min-height: 0;
-    overflow: hidden;
     container-type: size;
   }
 
@@ -235,7 +246,7 @@
   .terminal-response::before {
     margin-right: 0.55rem;
     color: var(--signal);
-    content: '>';
+    content: ">";
   }
 
   .terminal-cursor {
@@ -279,7 +290,6 @@
       container-type: normal;
       width: min(100%, 43rem);
       justify-self: center;
-      overflow: visible;
     }
 
     .hero-copy {

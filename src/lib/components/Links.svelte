@@ -57,7 +57,7 @@
 		</div>
 
 		<div class="studio-art">
-			<PhotoWall layout="grid" items={artworks} ariaLabel="Artwork" />
+			<PhotoWall layout="fill" items={artworks} ariaLabel="Artwork" />
 		</div>
 	</div>
 </section>
@@ -230,6 +230,16 @@
     width: 100%;
     height: 100%;
     border: 0;
+  }
+
+  /* Matches the photo wall's desktop breakpoint, where it fits itself to its container's height. */
+  @media (min-width: 1121px) {
+    .studio-art {
+      display: grid;
+      align-self: stretch;
+      min-height: 0;
+      container-type: size;
+    }
   }
 
   @media (max-width: 860px) {
