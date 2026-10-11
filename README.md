@@ -6,7 +6,7 @@ resume, and links sit on the same page. Custom CSS around an Ink & Signal
 palette. Live at kozturk.com.
 
 <p align="center">
-  <img src="demo/hero.png" alt="kozturk.com hero — headline, rotating quote, and overlapping project wall" width="800" />
+  <img src="https://github.com/user-attachments/assets/67403071-35e3-4dbb-98cd-719aeb8538f3" alt="kozturk.com hero — headline, rotating quote, and overlapping project wall" width="800" />
 </p>
 
 ## Features
