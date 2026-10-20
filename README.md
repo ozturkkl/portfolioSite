@@ -6,17 +6,17 @@ resume, and links sit on the same page. Custom CSS around an Ink & Signal
 palette. Live at kozturk.com.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/67403071-35e3-4dbb-98cd-719aeb8538f3" alt="kozturk.com hero — headline, rotating quote, and overlapping project wall" width="800" />
+  <img src="https://github.com/user-attachments/assets/67403071-35e3-4dbb-98cd-719aeb8538f3" alt="kozturk.com hero - headline, rotating quote, and overlapping project wall" width="800" />
 </p>
 
 ## Features
 
-- **Photo wall** — overlapping frames from experience shots and GitHub README
+- **Photo wall** - overlapping frames from experience shots and GitHub README
   images; a frame jumps to that card
-- **Experience** — roles with highlights, tool chips, and product galleries
-- **Projects** — public GitHub repos as cards (description, language, topics,
+- **Experience** - roles with highlights, tool chips, and product galleries
+- **Projects** - public GitHub repos as cards (description, language, topics,
   README preview). Featured repos can add an eyebrow or live URL
-- **Contact** — form to inbox, plus resume and profile links
+- **Contact** - form to inbox, plus resume and profile links
 
 ## Stack
 
